@@ -9,6 +9,10 @@ import SwiftUI
 
 @main
 struct ErfanAppApp: App {
+    
+    init() {
+    }
+    
     var body: some Scene {
         WindowGroup {
             ContentView()

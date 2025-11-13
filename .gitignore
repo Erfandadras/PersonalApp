@@ -13,6 +13,10 @@ xcuserdata/
 *.dSYM.zip
 *.dSYM
 
+## Firebase
+GoogleService-Info.plist
+*.google-service.plist
+
 ## Playgrounds
 timeline.xctimeline
 playground.xcworkspace

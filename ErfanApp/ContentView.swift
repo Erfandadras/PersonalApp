@@ -6,14 +6,42 @@
 //
 
 import SwiftUI
+import ServiceModule
+import BaseModule
 
 struct ContentView: View {
+    private let base = Base()
+    private let service = Service()
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
+        VStack(spacing: 20) {
+            Image(systemName: "cube.box.fill")
                 .imageScale(.large)
                 .foregroundStyle(.tint)
-            Text("Hello, world!")
+                .font(.system(size: 60))
+            
+            Text("Modular Architecture Demo")
+                .font(.title)
+                .fontWeight(.bold)
+            
+            VStack(alignment: .leading, spacing: 10) {
+                Text(base.hello())
+                    .font(.body)
+                    .foregroundStyle(.secondary)
+                
+                Text(service.hello())
+                    .font(.body)
+                    .foregroundStyle(.secondary)
+                
+                Text(service.getAppInfo())
+                    .font(.caption)
+                    .foregroundStyle(.tertiary)
+            }
+            .padding()
+            .background(
+                RoundedRectangle(cornerRadius: 12)
+                    .fill(Color.gray.opacity(0.1))
+            )
         }
         .padding()
     }

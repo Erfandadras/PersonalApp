@@ -13,6 +13,8 @@
 		E48E6E0C2EC5B0F8004C6BE8 /* ErfanAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48E6E0A2EC5B0F8004C6BE8 /* ErfanAppTests.swift */; };
 		E48E6E102EC5B0FB004C6BE8 /* ErfanAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48E6E0D2EC5B0FB004C6BE8 /* ErfanAppUITests.swift */; };
 		E48E6E112EC5B0FB004C6BE8 /* ErfanAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48E6E0E2EC5B0FB004C6BE8 /* ErfanAppUITestsLaunchTests.swift */; };
+		E48E6E1C2EC6240A004C6BE8 /* BaseModule in Frameworks */ = {isa = PBXBuildFile; productRef = E48E6E1B2EC6240A004C6BE8 /* BaseModule */; };
+		E48E6E1E2EC6240A004C6BE8 /* ServiceModule in Frameworks */ = {isa = PBXBuildFile; productRef = E48E6E1D2EC6240A004C6BE8 /* ServiceModule */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,9 @@
 		E48E6E0A2EC5B0F8004C6BE8 /* ErfanAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErfanAppTests.swift; sourceTree = "<group>"; };
 		E48E6E0D2EC5B0FB004C6BE8 /* ErfanAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErfanAppUITests.swift; sourceTree = "<group>"; };
 		E48E6E0E2EC5B0FB004C6BE8 /* ErfanAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErfanAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E48E6E172EC62313004C6BE8 /* BaseModule */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = BaseModule; sourceTree = "<group>"; };
+		E48E6E182EC62313004C6BE8 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		E48E6E192EC62313004C6BE8 /* ServiceModule */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ServiceModule; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +54,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E48E6E1E2EC6240A004C6BE8 /* ServiceModule in Frameworks */,
+				E48E6E1C2EC6240A004C6BE8 /* BaseModule in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +82,7 @@
 				E48E6E062EC5B0F3004C6BE8 /* ErfanApp */,
 				E48E6E0B2EC5B0F8004C6BE8 /* ErfanAppTests */,
 				E48E6E0F2EC5B0FB004C6BE8 /* ErfanAppUITests */,
+				E48E6E122EC61E45004C6BE8 /* Frameworks */,
 				E48E6DDA2EC5B0D3004C6BE8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -116,6 +124,24 @@
 			path = ErfanAppUITests;
 			sourceTree = "<group>";
 		};
+		E48E6E122EC61E45004C6BE8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E48E6E1A2EC62313004C6BE8 /* Modules */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E48E6E1A2EC62313004C6BE8 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				E48E6E172EC62313004C6BE8 /* BaseModule */,
+				E48E6E182EC62313004C6BE8 /* README.md */,
+				E48E6E192EC62313004C6BE8 /* ServiceModule */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -133,6 +159,8 @@
 			);
 			name = ErfanApp;
 			packageProductDependencies = (
+				E48E6E1B2EC6240A004C6BE8 /* BaseModule */,
+				E48E6E1D2EC6240A004C6BE8 /* ServiceModule */,
 			);
 			productName = ErfanApp;
 			productReference = E48E6DD92EC5B0D3004C6BE8 /* ErfanApp.app */;
@@ -599,6 +627,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E48E6E1B2EC6240A004C6BE8 /* BaseModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BaseModule;
+		};
+		E48E6E1D2EC6240A004C6BE8 /* ServiceModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ServiceModule;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E48E6DD12EC5B0D3004C6BE8 /* Project object */;
 }
