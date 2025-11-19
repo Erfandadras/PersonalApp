@@ -15,16 +15,20 @@ public let defaultVPadding = 12.updateForHeight()
 public let defaultHPadding = 12.updateForHeight()
 
 public struct K {
-    public static let appName: String = "Erfan"
+    /// Size
     public struct size {
+        ///  base design screen size
         static let designSize = CGSize(width: 430, height: 932)
+        /// phone bounds
         public static var bounds = UIScreen.main.bounds
+        
+        /// portrait size
         public static var portrait: CGSize {
             let width = bounds.width > bounds.height ? bounds.height : bounds.width
             let height = bounds.width > bounds.height ? bounds.width : bounds.height
             return CGSize(width: width, height: height)
         }
-        
+        /// landscape size
         public static var landscape: CGSize {
             let width = bounds.width > bounds.height ? bounds.height : bounds.width
             let height = bounds.width > bounds.height ? bounds.width : bounds.height
@@ -32,6 +36,7 @@ public struct K {
         }
     }
     
+    /// Metric constants
     public struct MetricData {
         public static let areaUnit: String = "m²"
         public static let priceUnit: String = "$"
