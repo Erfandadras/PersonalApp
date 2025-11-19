@@ -16,7 +16,8 @@ let package = Package(
     targets: [
         .target(
             name: "BaseModule",
-            dependencies: []),
+            dependencies: [],
+            resources: [.process("Resources")]),
         .testTarget(
             name: "BaseModuleTests",
             dependencies: ["BaseModule"]),

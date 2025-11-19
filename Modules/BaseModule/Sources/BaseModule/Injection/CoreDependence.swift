@@ -14,7 +14,7 @@ public class CoreDependence: DependenceProviders {
     private let container = DependencyContainer.shared
     
     // MARK: - init
-    public init(_ app: UIApplication) {}
+    init(_ app: UIApplication) {}
 
     // MARK: - logic
     public func execute() {
@@ -25,5 +25,6 @@ public class CoreDependence: DependenceProviders {
     public func reset() {
         @Injected var userManager: UserManager
         userManager.deleteUser()
+        container.reset()
     }
 }

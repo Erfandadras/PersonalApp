@@ -15,6 +15,7 @@
 		E48E6E112EC5B0FB004C6BE8 /* ErfanAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48E6E0E2EC5B0FB004C6BE8 /* ErfanAppUITestsLaunchTests.swift */; };
 		E48E6E1C2EC6240A004C6BE8 /* BaseModule in Frameworks */ = {isa = PBXBuildFile; productRef = E48E6E1B2EC6240A004C6BE8 /* BaseModule */; };
 		E48E6E1E2EC6240A004C6BE8 /* ServiceModule in Frameworks */ = {isa = PBXBuildFile; productRef = E48E6E1D2EC6240A004C6BE8 /* ServiceModule */; };
+		E48E6E222EC8CD2C004C6BE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48E6E212EC8CD2C004C6BE8 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E4275E8D2ECDD988002CCAE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		E48E6DD92EC5B0D3004C6BE8 /* ErfanApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ErfanApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E48E6DE62EC5B0D5004C6BE8 /* ErfanAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ErfanAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E48E6DF02EC5B0D5004C6BE8 /* ErfanAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ErfanAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,6 +49,7 @@
 		E48E6E172EC62313004C6BE8 /* BaseModule */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = BaseModule; sourceTree = "<group>"; };
 		E48E6E182EC62313004C6BE8 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E48E6E192EC62313004C6BE8 /* ServiceModule */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ServiceModule; sourceTree = "<group>"; };
+		E48E6E212EC8CD2C004C6BE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,9 +103,9 @@
 		E48E6E062EC5B0F3004C6BE8 /* ErfanApp */ = {
 			isa = PBXGroup;
 			children = (
-				E48E6E032EC5B0F3004C6BE8 /* Assets.xcassets */,
-				E48E6E042EC5B0F3004C6BE8 /* ContentView.swift */,
-				E48E6E052EC5B0F3004C6BE8 /* ErfanAppApp.swift */,
+				E4275E8D2ECDD988002CCAE2 /* Info.plist */,
+				E48E6E1F2EC8CD0C004C6BE8 /* Core */,
+				E48E6E242EC8CDD0004C6BE8 /* Screens */,
 			);
 			path = ErfanApp;
 			sourceTree = "<group>";
@@ -140,6 +143,40 @@
 				E48E6E192EC62313004C6BE8 /* ServiceModule */,
 			);
 			path = Modules;
+			sourceTree = "<group>";
+		};
+		E48E6E1F2EC8CD0C004C6BE8 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				E48E6E232EC8CDC2004C6BE8 /* Resources */,
+				E48E6E202EC8CD14004C6BE8 /* App */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		E48E6E202EC8CD14004C6BE8 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				E48E6E052EC5B0F3004C6BE8 /* ErfanAppApp.swift */,
+				E48E6E212EC8CD2C004C6BE8 /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		E48E6E232EC8CDC2004C6BE8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E48E6E032EC5B0F3004C6BE8 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E48E6E242EC8CDD0004C6BE8 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				E48E6E042EC5B0F3004C6BE8 /* ContentView.swift */,
+			);
+			path = Screens;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,6 +317,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E48E6E222EC8CD2C004C6BE8 /* AppDelegate.swift in Sources */,
 				E48E6E082EC5B0F3004C6BE8 /* ContentView.swift in Sources */,
 				E48E6E092EC5B0F3004C6BE8 /* ErfanAppApp.swift in Sources */,
 			);
@@ -449,6 +487,7 @@
 				DEVELOPMENT_TEAM = A93LZ79VS9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ErfanApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -481,6 +520,7 @@
 				DEVELOPMENT_TEAM = A93LZ79VS9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ErfanApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

@@ -1,14 +1,5 @@
 import Foundation
 
-/// Base module providing foundational functionality for the app
-public struct Base {
-    public init() {}
-    
-    public func hello() -> String {
-        return "Hello from Base module!"
-    }
-}
-
 /// Base configuration protocol
 public protocol BaseConfiguration {
     var appName: String { get }
