@@ -5,6 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "BaseModule",
+    defaultLocalization: "en",
     platforms: [
         .iOS(.v17)
     ],

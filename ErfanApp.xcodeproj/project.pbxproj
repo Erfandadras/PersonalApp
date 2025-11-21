@@ -16,6 +16,7 @@
 		E48E6E1C2EC6240A004C6BE8 /* BaseModule in Frameworks */ = {isa = PBXBuildFile; productRef = E48E6E1B2EC6240A004C6BE8 /* BaseModule */; };
 		E48E6E1E2EC6240A004C6BE8 /* ServiceModule in Frameworks */ = {isa = PBXBuildFile; productRef = E48E6E1D2EC6240A004C6BE8 /* ServiceModule */; };
 		E48E6E222EC8CD2C004C6BE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48E6E212EC8CD2C004C6BE8 /* AppDelegate.swift */; };
+		E4FDB4DD2ECF608F0094A358 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FDB4DC2ECF607B0094A358 /* AuthenticationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		E48E6E182EC62313004C6BE8 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E48E6E192EC62313004C6BE8 /* ServiceModule */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ServiceModule; sourceTree = "<group>"; };
 		E48E6E212EC8CD2C004C6BE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E4FDB4DC2ECF607B0094A358 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,9 +176,18 @@
 		E48E6E242EC8CDD0004C6BE8 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				E4FDB4DB2ECF60700094A358 /* Auth */,
 				E48E6E042EC5B0F3004C6BE8 /* ContentView.swift */,
 			);
 			path = Screens;
+			sourceTree = "<group>";
+		};
+		E4FDB4DB2ECF60700094A358 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				E4FDB4DC2ECF607B0094A358 /* AuthenticationView.swift */,
+			);
+			path = Auth;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,7 +282,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
+				ar,
 			);
 			mainGroup = E48E6DD02EC5B0D3004C6BE8;
 			minimizedProjectReferenceProxies = 1;
@@ -319,6 +330,7 @@
 			files = (
 				E48E6E222EC8CD2C004C6BE8 /* AppDelegate.swift in Sources */,
 				E48E6E082EC5B0F3004C6BE8 /* ContentView.swift in Sources */,
+				E4FDB4DD2ECF608F0094A358 /* AuthenticationView.swift in Sources */,
 				E48E6E092EC5B0F3004C6BE8 /* ErfanAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,6 +8,8 @@ import Foundation
 
 final public class UserManager: NSObject {
     private let manager = UserDefaults.standard
+    private let themeKey = "app_theme_preference"
+    private let languageKey = "AppleLanguages"
     
     // MARK: - init
     public override init() {}
@@ -28,6 +30,11 @@ final public class UserManager: NSObject {
         set { manager[#function] = newValue }
     }
     
+    public var colorSchema: String? {
+        get { return manager[themeKey] }
+        set { manager[themeKey] = newValue }
+    }
+    
     // MARK: - Methods
     public func deleteUser() {
         let dictionary = manager.dictionaryRepresentation()
@@ -41,5 +48,11 @@ final public class UserManager: NSObject {
         dictionary.keys.forEach { key in
             manager.removeObject(forKey: key)
         }
+    }
+    
+    public func updateLanguage(localCode: String) {
+        manager.set([localCode], forKey: languageKey)
+        manager.set(localCode, forKey: "app_lang")
+        manager.synchronize()
     }
 }

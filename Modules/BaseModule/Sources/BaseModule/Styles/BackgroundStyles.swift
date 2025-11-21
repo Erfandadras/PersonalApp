@@ -14,7 +14,11 @@ public struct BackgroundStyles {
     var shadows: [CustomShadow]
     var blur: CGFloat?
     
-    public init(radius: CGFloat, color: Color, border: BorderStyles? = nil, blur: CGFloat? = nil, shadows: CustomShadow...) {
+    public init(radius: CGFloat,
+                color: Color,
+                border: BorderStyles? = nil,
+                blur: CGFloat? = nil,
+                shadows: CustomShadow...) {
         self.radius = radius
         self.color = color
         self.shadows = shadows
@@ -22,7 +26,11 @@ public struct BackgroundStyles {
         self.blur = blur
     }
     
-    public init(radius: CGFloat, color: Color, border: BorderStyles? = nil, blur: CGFloat? = nil, shadows: [CustomShadow]) {
+    public init(radius: CGFloat,
+                color: Color,
+                border: BorderStyles? = nil,
+                blur: CGFloat? = nil,
+                shadows: [CustomShadow]) {
         self.radius = radius
         self.color = color
         self.shadows = shadows
