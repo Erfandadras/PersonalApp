@@ -10,7 +10,6 @@ import ServiceModule
 import BaseModule
 
 struct ContentView: View {
-    private let base = Base()
     private let service = Service()
     
     var body: some View {
@@ -21,26 +20,20 @@ struct ContentView: View {
                 .font(.system(size: 60))
             
             Text("Modular Architecture Demo")
-                .font(.title)
-                .fontWeight(.bold)
+                .font(.ui.largSemiBold) // custom font
             
             VStack(alignment: .leading, spacing: 10) {
-                Text(base.hello())
-                    .font(.body)
-                    .foregroundStyle(.secondary)
-                
                 Text(service.hello())
-                    .font(.body)
-                    .foregroundStyle(.secondary)
+                    .font(.ui.mSemiBold) // custom font
+                    .foregroundStyle(.ui.secondary) // custom color
                 
                 Text(service.getAppInfo())
-                    .font(.caption)
-                    .foregroundStyle(.tertiary)
+                    .font(.ui.xsSemiBold) // custom font
+                    .foregroundStyle(.ui.secondary) // custom color
             }
             .padding()
             .background(
-                RoundedRectangle(cornerRadius: 12)
-                    .fill(Color.gray.opacity(0.1))
+                Color.ui.secondaryBg.ignoresSafeArea()
             )
         }
         .padding()
