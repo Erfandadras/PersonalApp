@@ -23,6 +23,10 @@ public struct ColorStyle {
     public static let black: Color = Color("black", bundle: .module)
     
     // MARK: - Dynamic Colors (for complex cases)
+    public static let white: Color = .adaptive(
+        light: Color(hex: "#FFFFFF"),
+        dark: Color(hex: "#000000")
+    )
     /// Dynamic text color - high contrast in both modes
     public static let textPrimary: Color = .adaptive(
         light: Color(hex: "#000000"),

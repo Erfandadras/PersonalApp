@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11296265CAB8004CF7D5B5AD /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AED9009BC05A1119394332 /* LoginView.swift */; };
+		125146DEAEFC1B8B680A9C1E /* AuthContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A5778909DABA8352CC002B /* AuthContainerView.swift */; };
+		14A21A1481A7311FE6C606CA /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50A6DF761F83B9EBEA9365B /* SignUpView.swift */; };
+		243F82120872BB58E7212D39 /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB91B4560588658ABBD231C /* ForgotPasswordView.swift */; };
+		67848498FDE4E7DAD9AAFDA8 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AED9009BC05A1119394332 /* LoginView.swift */; };
+		736C6181A9FC5BC089E39866 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0FA2EFF3FED2DD516F1BC2 /* AuthViewModel.swift */; };
+		923185F03AD5ADDEA7DD9447 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0FA2EFF3FED2DD516F1BC2 /* AuthViewModel.swift */; };
+		A8B0D9CFDEB338B340C3BC68 /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB91B4560588658ABBD231C /* ForgotPasswordView.swift */; };
+		AB47E87A5F3F3E6C257A7280 /* AuthContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A5778909DABA8352CC002B /* AuthContainerView.swift */; };
+		CB05613A96555028029497B8 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50A6DF761F83B9EBEA9365B /* SignUpView.swift */; };
 		E48E6E072EC5B0F3004C6BE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E48E6E032EC5B0F3004C6BE8 /* Assets.xcassets */; };
 		E48E6E082EC5B0F3004C6BE8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48E6E042EC5B0F3004C6BE8 /* ContentView.swift */; };
 		E48E6E092EC5B0F3004C6BE8 /* ErfanAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48E6E052EC5B0F3004C6BE8 /* ErfanAppApp.swift */; };
@@ -16,7 +26,6 @@
 		E48E6E1C2EC6240A004C6BE8 /* BaseModule in Frameworks */ = {isa = PBXBuildFile; productRef = E48E6E1B2EC6240A004C6BE8 /* BaseModule */; };
 		E48E6E1E2EC6240A004C6BE8 /* ServiceModule in Frameworks */ = {isa = PBXBuildFile; productRef = E48E6E1D2EC6240A004C6BE8 /* ServiceModule */; };
 		E48E6E222EC8CD2C004C6BE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48E6E212EC8CD2C004C6BE8 /* AppDelegate.swift */; };
-		E4FDB4DD2ECF608F0094A358 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FDB4DC2ECF607B0094A358 /* AuthenticationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +46,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A97706D02A089B71231E522 /* SignUpView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SignUpView.swift; path = ErfanApp/Screens/Auth/Views/SignUpView.swift; sourceTree = "<group>"; };
+		0C0FA2EFF3FED2DD516F1BC2 /* AuthViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		1189E4E11E4DC180708BE701 /* AuthViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AuthViewModel.swift; path = ErfanApp/Screens/Auth/ViewModel/AuthViewModel.swift; sourceTree = "<group>"; };
+		1BC8112D475EA4F383930C8C /* LoginView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LoginView.swift; path = ErfanApp/Screens/Auth/Views/LoginView.swift; sourceTree = "<group>"; };
+		3DB91B4560588658ABBD231C /* ForgotPasswordView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
+		433AD555ACD33A4ED4471A20 /* ForgotPasswordView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ForgotPasswordView.swift; path = ErfanApp/Screens/Auth/Views/ForgotPasswordView.swift; sourceTree = "<group>"; };
+		5D61F1246FA34F2F593CFD89 /* SignUpView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SignUpView.swift; path = ErfanApp/Screens/Auth/Views/SignUpView.swift; sourceTree = "<group>"; };
+		A1582C3F550E09C3D716E9CC /* AuthViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AuthViewModel.swift; path = ErfanApp/Screens/Auth/ViewModel/AuthViewModel.swift; sourceTree = "<group>"; };
+		C4E1F2FA5B6E8342D48662B7 /* ForgotPasswordView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ForgotPasswordView.swift; path = ErfanApp/Screens/Auth/Views/ForgotPasswordView.swift; sourceTree = "<group>"; };
+		D6A5778909DABA8352CC002B /* AuthContainerView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AuthContainerView.swift; sourceTree = "<group>"; };
+		E368E25CF74ED77226B4DE4A /* LoginView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LoginView.swift; path = ErfanApp/Screens/Auth/Views/LoginView.swift; sourceTree = "<group>"; };
 		E4275E8D2ECDD988002CCAE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		E48E6DD92EC5B0D3004C6BE8 /* ErfanApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ErfanApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E48E6DE62EC5B0D5004C6BE8 /* ErfanAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ErfanAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,7 +71,8 @@
 		E48E6E182EC62313004C6BE8 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E48E6E192EC62313004C6BE8 /* ServiceModule */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ServiceModule; sourceTree = "<group>"; };
 		E48E6E212EC8CD2C004C6BE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E4FDB4DC2ECF607B0094A358 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
+		F50A6DF761F83B9EBEA9365B /* SignUpView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		F5AED9009BC05A1119394332 /* LoginView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +102,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		25AF4A69DE82C34C1183D05C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F5AED9009BC05A1119394332 /* LoginView.swift */,
+				F50A6DF761F83B9EBEA9365B /* SignUpView.swift */,
+				3DB91B4560588658ABBD231C /* ForgotPasswordView.swift */,
+			);
+			name = Views;
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4D81FD48C45BA386607DE980 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				D1EB0081EBA6EBBD97C044CA /* ViewModel */,
+				25AF4A69DE82C34C1183D05C /* Views */,
+				D6A5778909DABA8352CC002B /* AuthContainerView.swift */,
+			);
+			name = Auth;
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		D1EB0081EBA6EBBD97C044CA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0C0FA2EFF3FED2DD516F1BC2 /* AuthViewModel.swift */,
+			);
+			name = ViewModel;
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		E48E6DD02EC5B0D3004C6BE8 = {
 			isa = PBXGroup;
 			children = (
@@ -176,18 +228,10 @@
 		E48E6E242EC8CDD0004C6BE8 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				E4FDB4DB2ECF60700094A358 /* Auth */,
 				E48E6E042EC5B0F3004C6BE8 /* ContentView.swift */,
+				4D81FD48C45BA386607DE980 /* Auth */,
 			);
 			path = Screens;
-			sourceTree = "<group>";
-		};
-		E4FDB4DB2ECF60700094A358 /* Auth */ = {
-			isa = PBXGroup;
-			children = (
-				E4FDB4DC2ECF607B0094A358 /* AuthenticationView.swift */,
-			);
-			path = Auth;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,8 +272,6 @@
 				E48E6DE82EC5B0D5004C6BE8 /* PBXTargetDependency */,
 			);
 			name = ErfanAppTests;
-			packageProductDependencies = (
-			);
 			productName = ErfanAppTests;
 			productReference = E48E6DE62EC5B0D5004C6BE8 /* ErfanAppTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -248,8 +290,6 @@
 				E48E6DF22EC5B0D5004C6BE8 /* PBXTargetDependency */,
 			);
 			name = ErfanAppUITests;
-			packageProductDependencies = (
-			);
 			productName = ErfanAppUITests;
 			productReference = E48E6DF02EC5B0D5004C6BE8 /* ErfanAppUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
@@ -330,8 +370,17 @@
 			files = (
 				E48E6E222EC8CD2C004C6BE8 /* AppDelegate.swift in Sources */,
 				E48E6E082EC5B0F3004C6BE8 /* ContentView.swift in Sources */,
-				E4FDB4DD2ECF608F0094A358 /* AuthenticationView.swift in Sources */,
 				E48E6E092EC5B0F3004C6BE8 /* ErfanAppApp.swift in Sources */,
+				923185F03AD5ADDEA7DD9447 /* AuthViewModel.swift in Sources */,
+				736C6181A9FC5BC089E39866 /* AuthViewModel.swift in Sources */,
+				67848498FDE4E7DAD9AAFDA8 /* LoginView.swift in Sources */,
+				11296265CAB8004CF7D5B5AD /* LoginView.swift in Sources */,
+				14A21A1481A7311FE6C606CA /* SignUpView.swift in Sources */,
+				CB05613A96555028029497B8 /* SignUpView.swift in Sources */,
+				A8B0D9CFDEB338B340C3BC68 /* ForgotPasswordView.swift in Sources */,
+				243F82120872BB58E7212D39 /* ForgotPasswordView.swift in Sources */,
+				AB47E87A5F3F3E6C257A7280 /* AuthContainerView.swift in Sources */,
+				125146DEAEFC1B8B680A9C1E /* AuthContainerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

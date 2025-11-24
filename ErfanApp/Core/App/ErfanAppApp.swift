@@ -30,7 +30,7 @@ struct ErfanAppApp: App {
     // MARK: - view
     var body: some Scene {
         WindowGroup {
-            LanguageSettingsView()
+            AuthContainerView()
                 .id(localizationManager.currentLanguage) // by adding this line the mirror bug fixed
                 .environmentObject(themeManager)
                 .environmentObject(localizationManager)
