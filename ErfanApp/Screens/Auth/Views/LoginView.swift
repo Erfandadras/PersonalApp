@@ -10,7 +10,8 @@ import AuthenticationServices
 import BaseModule
 
 struct LoginView: View {
-    @ObservedObject var viewModel: AuthViewModel
+    @Bindable var viewModel: AuthViewModel
+    @Environment(AppState.self) var appState
     @Environment(\.colorScheme) var colorScheme
     @FocusState private var focusedField: Field?
     
@@ -36,7 +37,7 @@ struct LoginView: View {
             
             // Form
             VStack(spacing: 16) {
-                TextField("Email", text: $viewModel.email)
+                TextField("Email", text: $viewModel.dataModel.email)
                     .textContentType(.emailAddress)
                     .keyboardType(.emailAddress)
                     .autocapitalization(.none)
@@ -47,14 +48,14 @@ struct LoginView: View {
                     .submitLabel(.next)
                     .onSubmit { focusedField = .password }
                 
-                SecureField("Password", text: $viewModel.password)
+                SecureField("Password", text: $viewModel.dataModel.password)
                     .textContentType(.password)
                     .padding()
                     .background(Color(uiColor: .secondarySystemBackground))
                     .cornerRadius(12)
                     .focused($focusedField, equals: .password)
                     .submitLabel(.go)
-                    .onSubmit { viewModel.handlePrimaryAction() }
+                    .onSubmit { viewModel.login() }
                 
                 HStack {
                     Spacer()
@@ -68,8 +69,8 @@ struct LoginView: View {
             }
             
             // Login Button
-            Button(action: viewModel.handlePrimaryAction) {
-                if viewModel.isLoading {
+            Button(action: viewModel.login) {
+                if viewModel.dataModel.signInLoading {
                     ProgressView()
                         .tint(.white)
                 } else {
@@ -81,11 +82,11 @@ struct LoginView: View {
             }
             .frame(height: 50)
             .frame(maxWidth: .infinity)
-            .background(viewModel.isFormValid ? Color.blue : Color.gray.opacity(0.3))
+            .background(viewModel.dataModel.loginFormValidation ? Color.blue : Color.gray.opacity(0.3))
             .foregroundStyle(.white)
             .cornerRadius(16)
-            .disabled(!viewModel.isFormValid || viewModel.isLoading)
-            .animation(.easeInOut, value: viewModel.isFormValid)
+            .disabled(!viewModel.dataModel.loginFormValidation || viewModel.dataModel.signInLoading)
+            .animation(.easeInOut, value: viewModel.dataModel.loginFormValidation)
             
             // Divider
             HStack {
@@ -153,6 +154,19 @@ struct LoginView: View {
         .background(Color(uiColor: .systemBackground))
         .onTapGesture {
             focusedField = nil
+        }
+        .alert("Register PassKey", isPresented: $viewModel.dataModel.showPassKeyRegistration) {
+            TextField("Enter your name", text: $viewModel.dataModel.passKeyUserName)
+            Button("Register") {
+                if !viewModel.dataModel.passKeyUserName.isEmpty {
+                    viewModel.registerPassKey(userName: viewModel.dataModel.passKeyUserName)
+                }
+            }
+            Button("Cancel", role: .cancel) {
+                viewModel.dataModel.showPassKeyRegistration = false
+            }
+        } message: {
+            Text("To sign in with PassKey, you need to register first. Please enter your name to create a PassKey.")
         }
     }
 }

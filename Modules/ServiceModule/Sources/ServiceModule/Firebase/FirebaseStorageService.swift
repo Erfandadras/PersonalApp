@@ -10,7 +10,7 @@ import UIKit
 public class FirebaseStorageService {
     private let storage: Storage
     
-    public init(storage: Storage = FirebaseManager.shared.storage) {
+    public init(storage: Storage) {
         self.storage = storage
     }
     

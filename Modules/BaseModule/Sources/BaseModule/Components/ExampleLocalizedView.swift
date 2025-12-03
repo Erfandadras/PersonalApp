@@ -10,7 +10,7 @@ import SwiftUI
 /// Example demonstrating RTL/LTR and localization usage
 public struct ExampleLocalizedView: View {
     @EnvironmentObject var localizationManager: LocalizationManager
-    @EnvironmentObject var themeManager: ThemeManager
+    @Environment(ThemeManager.self) var themeManager
     
     public init() {}
     
@@ -140,7 +140,7 @@ public struct ExampleLocalizedView: View {
                 locManager.setLanguage(.english)
                 return locManager
             }())
-            .environmentObject({
+            .environment({
                 let userManager = UserManager()
                 let themeManager = ThemeManager(userManager: userManager)
                 themeManager.setTheme(.light)
@@ -157,7 +157,7 @@ public struct ExampleLocalizedView: View {
                 locManager.setLanguage(.arabic)
                 return locManager
             }())
-            .environmentObject({
+            .environment({
                 let userManager = UserManager()
                 let themeManager = ThemeManager(userManager: userManager)
                 themeManager.setTheme(.dark)

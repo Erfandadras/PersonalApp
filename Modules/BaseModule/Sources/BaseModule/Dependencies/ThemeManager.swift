@@ -24,9 +24,11 @@ public enum AppTheme: String, CaseIterable {
 
 /// ThemeManager handles the app's color scheme management
 /// Uses UserManager for persistence and supports manual theme switching
-final public class ThemeManager: ObservableObject {
+
+@Observable
+final public class ThemeManager{
     // MARK: - Properties
-    @Published public private(set) var currentTheme: AppTheme {
+    public private(set) var currentTheme: AppTheme {
         didSet {
             saveTheme()
         }

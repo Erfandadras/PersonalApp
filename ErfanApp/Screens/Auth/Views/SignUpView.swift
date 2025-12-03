@@ -9,7 +9,7 @@ import SwiftUI
 import BaseModule
 
 struct SignUpView: View {
-    @ObservedObject var viewModel: AuthViewModel
+    @Bindable var viewModel: AuthViewModel
     @FocusState private var focusedField: Field?
     
     enum Field {
@@ -36,28 +36,23 @@ struct SignUpView: View {
             
             // Form
             VStack(spacing: 16) {
-                TextField("Full Name", text: $viewModel.fullName)
+                AuthTextField("Full Name", $viewModel.dataModel.fullName)
                     .textContentType(.name)
                     .autocapitalization(.words)
-                    .padding()
-                    .background(Color(uiColor: .secondarySystemBackground))
-                    .cornerRadius(12)
                     .focused($focusedField, equals: .fullName)
                     .submitLabel(.next)
                     .onSubmit { focusedField = .email }
                 
-                TextField("Email", text: $viewModel.email)
+                AuthTextField("Email", $viewModel.dataModel.email)
+                    .autocapitalization(.none)
                     .textContentType(.emailAddress)
                     .keyboardType(.emailAddress)
-                    .autocapitalization(.none)
-                    .padding()
-                    .background(Color(uiColor: .secondarySystemBackground))
-                    .cornerRadius(12)
                     .focused($focusedField, equals: .email)
                     .submitLabel(.next)
                     .onSubmit { focusedField = .password }
+                    .spaceHinted(hintModel: $viewModel.dataModel.emailHint)
                 
-                SecureField("Password", text: $viewModel.password)
+                SecureField("Password", text: $viewModel.dataModel.password)
                     .textContentType(.newPassword)
                     .padding()
                     .background(Color(uiColor: .secondarySystemBackground))
@@ -66,19 +61,20 @@ struct SignUpView: View {
                     .submitLabel(.next)
                     .onSubmit { focusedField = .confirmPassword }
                 
-                SecureField("Confirm Password", text: $viewModel.confirmPassword)
+                SecureField("Confirm Password", text: $viewModel.dataModel.confirmPassword)
                     .textContentType(.newPassword)
                     .padding()
                     .background(Color(uiColor: .secondarySystemBackground))
                     .cornerRadius(12)
                     .focused($focusedField, equals: .confirmPassword)
                     .submitLabel(.go)
-                    .onSubmit { viewModel.handlePrimaryAction() }
+                    .onSubmit { viewModel.login() }
+                    .spaceHinted(hintModel: $viewModel.dataModel.confirmPasswordHint)
             }
             
             // Sign Up Button
-            Button(action: viewModel.handlePrimaryAction) {
-                if viewModel.isLoading {
+            Button(action: viewModel.register) {
+                if viewModel.dataModel.registerLoading {
                     ProgressView()
                         .tint(.white)
                 } else {
@@ -90,11 +86,10 @@ struct SignUpView: View {
             }
             .frame(height: 50)
             .frame(maxWidth: .infinity)
-            .background(viewModel.isFormValid ? Color.blue : Color.gray.opacity(0.3))
+            .background(Color.blue)
             .foregroundStyle(.white)
             .cornerRadius(16)
-            .disabled(!viewModel.isFormValid || viewModel.isLoading)
-            .animation(.easeInOut, value: viewModel.isFormValid)
+            .animation(.easeInOut, value: viewModel.dataModel.registerFormValidation)
             
             Spacer()
             

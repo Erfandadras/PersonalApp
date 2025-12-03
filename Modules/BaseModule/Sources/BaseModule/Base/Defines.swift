@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 public typealias Action = (() -> Void)
 public typealias Success = ((Bool) -> Void)
 public typealias Fuccess = ((Error) -> Void)

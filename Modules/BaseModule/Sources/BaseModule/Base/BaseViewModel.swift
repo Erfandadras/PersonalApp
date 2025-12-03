@@ -5,35 +5,34 @@
 //  Created by Erfan mac mini on 11/24/25.
 //
 
+import SwiftUI
 import Combine
 
 public struct ViewModelState {
-    public var loading = true
+    public var loading = false
     public var reloading = false
     public var error: Error? = nil
     public var loadingMore = false
     
-    mutating func success() -> Self {
-        self.loading = false
-        self.reloading = false
-        self.error = nil
-        self.loadingMore = false
-        return self
+    public static func setLoading(value: Bool) -> Self {
+        return ViewModelState(loading: value)
     }
     
-    mutating func failure(error: Error) -> Self {
-        self.loading = false
-        self.reloading = false
-        self.error = error
-        self.loadingMore = false
-        return self
+    public static func success() -> Self {
+        return ViewModelState(loading: false)
+    }
+    
+    public static func failure(error: Error) -> Self {
+        return ViewModelState(loading: false)
     }
 }
 
-open class BaseViewModel: ObservableObject {
+@MainActor
+@Observable
+open class BaseViewModel {
     // MARK: - properties
-    @Published public private(set) var state: ViewModelState?
-    @Published public private(set) var toast: Toast?
+    public private(set) var modelState: ViewModelState = .init()
+    public var toast: Toast?
     public var bag: Set<AnyCancellable> = []
     
     public init() {}
@@ -41,7 +40,7 @@ open class BaseViewModel: ObservableObject {
     // MARK: - logics
     public func updateState(state: ViewModelState) {
         waitMainThread(after: 0.3, callback: {
-            self.state = state
+            self.modelState = state
         })
     }
     

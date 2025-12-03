@@ -9,8 +9,9 @@ import SwiftUI
 import BaseModule
 
 struct AuthContainerView: View {
-    @StateObject private var viewModel = AuthViewModel()
-    @EnvironmentObject var themeManager: ThemeManager
+    @State private var viewModel = AuthViewModel()
+    @Environment(AppState.self) var appState
+    @Environment(ThemeManager.self) var themeManager
     
     var body: some View {
         ZStack {
@@ -33,13 +34,12 @@ struct AuthContainerView: View {
                 }
             }
         }
-        .alert(isPresented: $viewModel.showError) {
-            Alert(
-                title: Text("Error"),
-                message: Text(viewModel.errorMessage ?? "An unknown error occurred"),
-                dismissButton: .default(Text("OK"))
-            )
+        .onChange(of: viewModel.dataModel.user) { _, newValue in
+            if newValue != nil {
+                appState.setFlow(.home)
+            }
         }
+        .toast(toast: $viewModel.toast)
         .animation(.spring(response: 0.5, dampingFraction: 0.8), value: viewModel.authState)
     }
 }

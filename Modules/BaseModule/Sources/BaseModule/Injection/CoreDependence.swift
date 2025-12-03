@@ -9,12 +9,10 @@ import UIKit
 
 public class CoreDependence: DependenceProviders {
     // MARK: - properties
-    // make sure this class execute on the start
-    var application: UIApplication?
     private let container = DependencyContainer.shared
     
     // MARK: - init
-    init(_ app: UIApplication) {}
+    public init() {}
 
     // MARK: - logic
     public func execute() {

@@ -39,30 +39,3 @@ public class DataService: ServiceProtocol {
         return Data()
     }
 }
-
-// MARK: - Firebase Service Factory
-
-/// Factory for creating Firebase service instances
-public struct FirebaseServiceFactory {
-    
-    /// Get Firebase Manager instance
-    public static var manager: FirebaseManager {
-        return FirebaseManager.shared
-    }
-    
-    /// Create Auth Service instance
-    public static func createAuthService() -> FirebaseAuthService {
-        return FirebaseAuthService()
-    }
-    
-    /// Create Firestore Service instance
-    public static func createFirestoreService() -> FirestoreService {
-        return FirestoreService()
-    }
-    
-    /// Create Storage Service instance
-    public static func createStorageService() -> FirebaseStorageService {
-        return FirebaseStorageService()
-    }
-}
-

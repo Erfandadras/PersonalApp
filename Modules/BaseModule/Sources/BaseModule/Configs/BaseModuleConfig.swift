@@ -9,11 +9,8 @@ import UIKit
 public struct BaseModuleConfig {
     /// config all base module related classes
     /// like image cache system
-    /// DI, ...
     public static func config(_ app: UIApplication) {
         // load fonts
         UIFont.loadAll()
-        // execute DI
-        CoreDependence(app).execute()
     }
 }

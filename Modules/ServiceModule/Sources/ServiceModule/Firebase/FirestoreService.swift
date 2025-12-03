@@ -6,7 +6,7 @@ import BaseModule
 public class FirestoreService {
     private let db: Firestore
     
-    public init(db: Firestore = FirebaseManager.shared.firestore) {
+    public init(db: Firestore) {
         self.db = db
     }
     

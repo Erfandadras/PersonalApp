@@ -9,7 +9,7 @@ import SwiftUI
 import BaseModule
 
 struct ForgotPasswordView: View {
-    @ObservedObject var viewModel: AuthViewModel
+    @Bindable var viewModel: AuthViewModel
     @FocusState private var focusedField: Field?
     
     enum Field {
@@ -34,7 +34,7 @@ struct ForgotPasswordView: View {
             
             // Form
             VStack(spacing: 16) {
-                TextField("Email", text: $viewModel.email)
+                TextField("Email", text: $viewModel.dataModel.email)
                     .textContentType(.emailAddress)
                     .keyboardType(.emailAddress)
                     .autocapitalization(.none)
@@ -43,12 +43,11 @@ struct ForgotPasswordView: View {
                     .cornerRadius(12)
                     .focused($focusedField, equals: .email)
                     .submitLabel(.go)
-                    .onSubmit { viewModel.handlePrimaryAction() }
             }
             
             // Reset Button
-            Button(action: viewModel.handlePrimaryAction) {
-                if viewModel.isLoading {
+            Button(action: (viewModel.forgetPassword)) {
+                if viewModel.modelState.loading {
                     ProgressView()
                         .tint(.white)
                 } else {
@@ -60,11 +59,11 @@ struct ForgotPasswordView: View {
             }
             .frame(height: 50)
             .frame(maxWidth: .infinity)
-            .background(viewModel.isFormValid ? Color.blue : Color.gray.opacity(0.3))
+            .background(viewModel.dataModel.isValidEmail ? Color.blue : Color.gray.opacity(0.3))
             .foregroundStyle(.white)
             .cornerRadius(16)
-            .disabled(!viewModel.isFormValid || viewModel.isLoading)
-            .animation(.easeInOut, value: viewModel.isFormValid)
+            .disabled(!viewModel.dataModel.isValidEmail  || viewModel.modelState.loading)
+            .animation(.easeInOut, value: viewModel.dataModel.isValidEmail )
             
             Spacer()
             
