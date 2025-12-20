@@ -14,6 +14,14 @@ public struct ViewModelState {
     public var error: Error? = nil
     public var loadingMore = false
     
+    public init(loading: Bool = false, reloading: Bool = false, error: Error? = nil, loadingMore: Bool = false) {
+        self.loading = loading
+        self.reloading = reloading
+        self.error = error
+        self.loadingMore = loadingMore
+    }
+    
+    
     public static func setLoading(value: Bool) -> Self {
         return ViewModelState(loading: value)
     }
@@ -28,12 +36,11 @@ public struct ViewModelState {
 }
 
 @MainActor
-@Observable
-open class BaseViewModel {
+open class BaseViewModel: ObservableObject {
     // MARK: - properties
-    public private(set) var modelState: ViewModelState = .init()
-    public var toast: Toast?
-    public var bag: Set<AnyCancellable> = []
+    @Published public private(set) var modelState: ViewModelState = .init()
+    @Published public var toast: Toast?
+    @Published public var bag: Set<AnyCancellable> = []
     
     public init() {}
     

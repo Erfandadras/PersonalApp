@@ -22,6 +22,15 @@
 		E41C37FD2EE019F200A165DB /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41C37FC2EE019E600A165DB /* AuthModel.swift */; };
 		E41C37FF2EE01B5E00A165DB /* UserRM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41C37FE2EE01B5100A165DB /* UserRM.swift */; };
 		E41C38022EE0206200A165DB /* AuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41C38012EE0205B00A165DB /* AuthTextField.swift */; };
+		E45429FC2EF18D840086D214 /* menuAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = E45429FB2EF18D830086D214 /* menuAnimation.json */; };
+		E45429FF2EF18EA50086D214 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = E45429FE2EF18EA50086D214 /* Lottie */; };
+		E4542A012EF19CBF0086D214 /* ExperienceFormState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4542A002EF19CBF0086D214 /* ExperienceFormState.swift */; };
+		E4542A032EF19E650086D214 /* IntroductionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4542A022EF19E4F0086D214 /* IntroductionService.swift */; };
+		E4542A052EF19E720086D214 /* UserIntroduction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4542A042EF19E6B0086D214 /* UserIntroduction.swift */; };
+		E4542A0A2EF1B2D60086D214 /* ExperienceFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4542A092EF1B2D60086D214 /* ExperienceFormView.swift */; };
+		E480DA812EF5543100258DE7 /* CollapsableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E480DA802EF5543100258DE7 /* CollapsableHeaderView.swift */; };
+		E4812C5A2EE6091600AF31E4 /* IntroductionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4812C592EE6091200AF31E4 /* IntroductionView.swift */; };
+		E4812C5C2EE6092100AF31E4 /* IntroductionVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4812C5B2EE6091A00AF31E4 /* IntroductionVM.swift */; };
 		E48E6E072EC5B0F3004C6BE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E48E6E032EC5B0F3004C6BE8 /* Assets.xcassets */; };
 		E48E6E082EC5B0F3004C6BE8 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48E6E042EC5B0F3004C6BE8 /* HomeView.swift */; };
 		E48E6E092EC5B0F3004C6BE8 /* ErfanAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48E6E052EC5B0F3004C6BE8 /* ErfanAppApp.swift */; };
@@ -31,6 +40,8 @@
 		E48E6E1C2EC6240A004C6BE8 /* BaseModule in Frameworks */ = {isa = PBXBuildFile; productRef = E48E6E1B2EC6240A004C6BE8 /* BaseModule */; };
 		E48E6E1E2EC6240A004C6BE8 /* ServiceModule in Frameworks */ = {isa = PBXBuildFile; productRef = E48E6E1D2EC6240A004C6BE8 /* ServiceModule */; };
 		E48E6E222EC8CD2C004C6BE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48E6E212EC8CD2C004C6BE8 /* AppDelegate.swift */; };
+		E490FEDD2EE6160C007EE059 /* Experience.swift in Sources */ = {isa = PBXBuildFile; fileRef = E490FEDC2EE6160C007EE059 /* Experience.swift */; };
+		E490FEE02EE61911007EE059 /* ExperienceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E490FEDF2EE61908007EE059 /* ExperienceService.swift */; };
 		E4DB3B122ED8155E008ADB9A /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DB3B102ED8155E008ADB9A /* SplashViewModel.swift */; };
 		E4DB3B132ED8155E008ADB9A /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DB3B0F2ED8155E008ADB9A /* SplashView.swift */; };
 		E4DB3B162ED81BE5008ADB9A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E4DB3B152ED81BE5008ADB9A /* GoogleService-Info.plist */; };
@@ -65,6 +76,14 @@
 		E41C38012EE0205B00A165DB /* AuthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTextField.swift; sourceTree = "<group>"; };
 		E41C38032EE06B3200A165DB /* ErfanApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ErfanApp.entitlements; sourceTree = "<group>"; };
 		E4275E8D2ECDD988002CCAE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		E45429FB2EF18D830086D214 /* menuAnimation.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = menuAnimation.json; sourceTree = "<group>"; };
+		E4542A002EF19CBF0086D214 /* ExperienceFormState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceFormState.swift; sourceTree = "<group>"; };
+		E4542A022EF19E4F0086D214 /* IntroductionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionService.swift; sourceTree = "<group>"; };
+		E4542A042EF19E6B0086D214 /* UserIntroduction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserIntroduction.swift; sourceTree = "<group>"; };
+		E4542A092EF1B2D60086D214 /* ExperienceFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceFormView.swift; sourceTree = "<group>"; };
+		E480DA802EF5543100258DE7 /* CollapsableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsableHeaderView.swift; sourceTree = "<group>"; };
+		E4812C592EE6091200AF31E4 /* IntroductionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionView.swift; sourceTree = "<group>"; };
+		E4812C5B2EE6091A00AF31E4 /* IntroductionVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionVM.swift; sourceTree = "<group>"; };
 		E48E6DD92EC5B0D3004C6BE8 /* ErfanApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ErfanApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E48E6DE62EC5B0D5004C6BE8 /* ErfanAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ErfanAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E48E6DF02EC5B0D5004C6BE8 /* ErfanAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ErfanAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,6 +97,8 @@
 		E48E6E182EC62313004C6BE8 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E48E6E192EC62313004C6BE8 /* ServiceModule */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ServiceModule; sourceTree = "<group>"; };
 		E48E6E212EC8CD2C004C6BE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E490FEDC2EE6160C007EE059 /* Experience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Experience.swift; sourceTree = "<group>"; };
+		E490FEDF2EE61908007EE059 /* ExperienceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceService.swift; sourceTree = "<group>"; };
 		E4DB3B0F2ED8155E008ADB9A /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		E4DB3B102ED8155E008ADB9A /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		E4DB3B152ED81BE5008ADB9A /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -93,6 +114,7 @@
 			files = (
 				E48E6E1E2EC6240A004C6BE8 /* ServiceModule in Frameworks */,
 				E48E6E1C2EC6240A004C6BE8 /* BaseModule in Frameworks */,
+				E45429FF2EF18EA50086D214 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,6 +208,42 @@
 			path = Component;
 			sourceTree = "<group>";
 		};
+		E480DA7F2EF5541100258DE7 /* TestUI */ = {
+			isa = PBXGroup;
+			children = (
+				E480DA802EF5543100258DE7 /* CollapsableHeaderView.swift */,
+			);
+			path = TestUI;
+			sourceTree = "<group>";
+		};
+		E4812C582EE6090000AF31E4 /* Introduction */ = {
+			isa = PBXGroup;
+			children = (
+				E490FEDE2EE618FB007EE059 /* Dependency */,
+				E490FEDB2EE615F8007EE059 /* Model */,
+				E4812C5E2EE6092D00AF31E4 /* View */,
+				E4812C5D2EE6092400AF31E4 /* ViewMpdel */,
+			);
+			path = Introduction;
+			sourceTree = "<group>";
+		};
+		E4812C5D2EE6092400AF31E4 /* ViewMpdel */ = {
+			isa = PBXGroup;
+			children = (
+				E4812C5B2EE6091A00AF31E4 /* IntroductionVM.swift */,
+			);
+			path = ViewMpdel;
+			sourceTree = "<group>";
+		};
+		E4812C5E2EE6092D00AF31E4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E4542A092EF1B2D60086D214 /* ExperienceFormView.swift */,
+				E4812C592EE6091200AF31E4 /* IntroductionView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		E48E6DD02EC5B0D3004C6BE8 = {
 			isa = PBXGroup;
 			children = (
@@ -275,6 +333,7 @@
 		E48E6E232EC8CDC2004C6BE8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E45429FB2EF18D830086D214 /* menuAnimation.json */,
 				E4DB3B152ED81BE5008ADB9A /* GoogleService-Info.plist */,
 				E48E6E032EC5B0F3004C6BE8 /* Assets.xcassets */,
 			);
@@ -284,11 +343,32 @@
 		E48E6E242EC8CDD0004C6BE8 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				E480DA7F2EF5541100258DE7 /* TestUI */,
+				E4812C582EE6090000AF31E4 /* Introduction */,
 				E41C37F02EDF32DD00A165DB /* Home */,
 				E4DB3B112ED8155E008ADB9A /* Splash */,
 				4D81FD48C45BA386607DE980 /* Auth */,
 			);
 			path = Screens;
+			sourceTree = "<group>";
+		};
+		E490FEDB2EE615F8007EE059 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E4542A042EF19E6B0086D214 /* UserIntroduction.swift */,
+				E4542A002EF19CBF0086D214 /* ExperienceFormState.swift */,
+				E490FEDC2EE6160C007EE059 /* Experience.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E490FEDE2EE618FB007EE059 /* Dependency */ = {
+			isa = PBXGroup;
+			children = (
+				E4542A022EF19E4F0086D214 /* IntroductionService.swift */,
+				E490FEDF2EE61908007EE059 /* ExperienceService.swift */,
+			);
+			path = Dependency;
 			sourceTree = "<group>";
 		};
 		E4DB3B112ED8155E008ADB9A /* Splash */ = {
@@ -319,6 +399,7 @@
 			packageProductDependencies = (
 				E48E6E1B2EC6240A004C6BE8 /* BaseModule */,
 				E48E6E1D2EC6240A004C6BE8 /* ServiceModule */,
+				E45429FE2EF18EA50086D214 /* Lottie */,
 			);
 			productName = ErfanApp;
 			productReference = E48E6DD92EC5B0D3004C6BE8 /* ErfanApp.app */;
@@ -392,6 +473,9 @@
 			);
 			mainGroup = E48E6DD02EC5B0D3004C6BE8;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				E45429FD2EF18EA50086D214 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = E48E6DDA2EC5B0D3004C6BE8 /* Products */;
 			projectDirPath = "";
@@ -410,6 +494,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4DB3B162ED81BE5008ADB9A /* GoogleService-Info.plist in Resources */,
+				E45429FC2EF18D840086D214 /* menuAnimation.json in Resources */,
 				E48E6E072EC5B0F3004C6BE8 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -436,8 +521,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E41C37F42EDF32FF00A165DB /* HomeViewModel.swift in Sources */,
+				E4542A0A2EF1B2D60086D214 /* ExperienceFormView.swift in Sources */,
 				E48E6E222EC8CD2C004C6BE8 /* AppDelegate.swift in Sources */,
+				E4542A052EF19E720086D214 /* UserIntroduction.swift in Sources */,
 				E48E6E082EC5B0F3004C6BE8 /* HomeView.swift in Sources */,
+				E4542A032EF19E650086D214 /* IntroductionService.swift in Sources */,
+				E490FEDD2EE6160C007EE059 /* Experience.swift in Sources */,
+				E4812C5C2EE6092100AF31E4 /* IntroductionVM.swift in Sources */,
 				E4DB3B1D2ED9D952008ADB9A /* AppState.swift in Sources */,
 				E41C37FD2EE019F200A165DB /* AuthModel.swift in Sources */,
 				E48E6E092EC5B0F3004C6BE8 /* ErfanAppApp.swift in Sources */,
@@ -448,11 +538,15 @@
 				11296265CAB8004CF7D5B5AD /* LoginView.swift in Sources */,
 				14A21A1481A7311FE6C606CA /* SignUpView.swift in Sources */,
 				E41C37F62EDF437500A165DB /* HomeItemView.swift in Sources */,
+				E480DA812EF5543100258DE7 /* CollapsableHeaderView.swift in Sources */,
 				E4DB3B122ED8155E008ADB9A /* SplashViewModel.swift in Sources */,
 				E4DB3B132ED8155E008ADB9A /* SplashView.swift in Sources */,
+				E490FEE02EE61911007EE059 /* ExperienceService.swift in Sources */,
 				CB05613A96555028029497B8 /* SignUpView.swift in Sources */,
 				A8B0D9CFDEB338B340C3BC68 /* ForgotPasswordView.swift in Sources */,
 				243F82120872BB58E7212D39 /* ForgotPasswordView.swift in Sources */,
+				E4542A012EF19CBF0086D214 /* ExperienceFormState.swift in Sources */,
+				E4812C5A2EE6091600AF31E4 /* IntroductionView.swift in Sources */,
 				E41C37FF2EE01B5E00A165DB /* UserRM.swift in Sources */,
 				AB47E87A5F3F3E6C257A7280 /* AuthContainerView.swift in Sources */,
 				125146DEAEFC1B8B680A9C1E /* AuthContainerView.swift in Sources */,
@@ -630,6 +724,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -664,6 +759,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -806,7 +902,23 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		E45429FD2EF18EA50086D214 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.5.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
+		E45429FE2EF18EA50086D214 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E45429FD2EF18EA50086D214 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
 		E48E6E1B2EC6240A004C6BE8 /* BaseModule */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = BaseModule;

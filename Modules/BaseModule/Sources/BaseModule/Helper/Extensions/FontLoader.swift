@@ -17,6 +17,9 @@ public extension UIFont {
         "PoppinsLatin-Medium.ttf",
         "PoppinsLatin-Light.ttf",
         "PoppinsLatin-Bold.ttf",
+        
+        "ChalkboardSE.ttf",
+        "Mj_Naskhi.ttf",
     ]
 
     static func loadAll() {

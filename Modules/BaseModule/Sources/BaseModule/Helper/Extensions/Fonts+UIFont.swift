@@ -38,4 +38,31 @@ public extension Font {
             return UIFont(name: "PoppinsLatin-Light", size: size)!.Convert()
         }
     }
+    
+    struct Copperplate {
+        public static func Bold(size: CGFloat) -> Font {
+            return .custom("Copperplate-Bold", size: size)
+        }
+    }
+    
+    struct GillSans {
+        public static func Regular(size: CGFloat) -> Font {
+            return .custom("GillSans-Regular", size: size)
+        }
+    }
+    
+    struct ChalkboardSE {
+        public static func Bold(size: CGFloat) -> Font {
+            return .custom("ChalkboardSE-Bold", size: size)
+        }
+        
+        public static func Regular(size: CGFloat) -> Font {
+            return .custom("ChalkboardSE-Regular", size: size)
+        }
+    }
+    
+    static func Naskhi(size: CGFloat) -> Font {
+        return .custom("Mj_Naskhi", size: size)
+        
+    }
 }

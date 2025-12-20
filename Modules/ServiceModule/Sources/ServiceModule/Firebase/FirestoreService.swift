@@ -1,72 +1,88 @@
 import Foundation
 import FirebaseFirestore
+import FirebaseFirestoreSwift
 import BaseModule
 
+public enum FirestoreCollection: String, CaseIterable, Sendable {
+    case experiences = "Experiences"
+    case users = "User"
+    
+    var path: String { rawValue }
+}
+
 /// Firebase Firestore Database Service
-public class FirestoreService {
+public final class FirestoreService {
     private let db: Firestore
     
-    public init(db: Firestore) {
+    public init(db: Firestore = Firestore.firestore()) {
         self.db = db
+    }
+
+    private func collectionRef(for collection: FirestoreCollection) -> CollectionReference {
+        db.collection(collection.path)
     }
     
     // MARK: - Generic CRUD Operations
     
     /// Create a document with auto-generated ID
     public func create<T: Encodable>(
-        collection: String,
+        collection: FirestoreCollection,
         data: T
     ) async throws -> String {
-        let docRef = try db.collection(collection).addDocument(from: data)
+        let docRef = try collectionRef(for: collection).addDocument(from: data)
         return docRef.documentID
     }
     
     /// Create or update a document with specific ID
     public func set<T: Encodable>(
-        collection: String,
+        collection: FirestoreCollection,
         documentId: String,
         data: T,
         merge: Bool = true
     ) async throws {
-        try db.collection(collection)
+        try collectionRef(for: collection)
             .document(documentId)
             .setData(from: data, merge: merge)
     }
     
     /// Read a document
     public func get<T: Decodable>(
-        collection: String,
+        collection: FirestoreCollection,
         documentId: String,
         as type: T.Type
     ) async throws -> T {
-        let document = try await db.collection(collection)
+        let document = try await collectionRef(for: collection)
             .document(documentId)
             .getDocument()
         
-        guard let data = try? document.data(as: type) else {
-            throw FirestoreError.decodingFailed
+        guard document.exists else {
+            throw FirestoreError.documentNotFound
         }
         
-        return data
+        do {
+            return try document.data(as: type)
+        } catch {
+            throw FirestoreError.decodingFailed
+        }
     }
     
     /// Update specific fields in a document
     public func update(
-        collection: String,
+        collection: FirestoreCollection,
         documentId: String,
         fields: [String: Any]
     ) async throws {
-        try await db.collection(collection)
+        try await collectionRef(for: collection)
             .document(documentId)
             .updateData(fields)
     }
     
     /// Delete a document
     public func delete(
-        collection: String,
+        collection: FirestoreCollection,
         documentId: String
     ) async throws {
-        try await db.collection(collection)
+        try await collectionRef(for: collection)
             .document(documentId)
             .delete()
     }
@@ -75,24 +91,23 @@ public class FirestoreService {
     
     /// Get all documents in a collection
     public func getAll<T: Decodable>(
-        collection: String,
+        collection: FirestoreCollection,
         as type: T.Type
     ) async throws -> [T] {
-        let snapshot = try await db.collection(collection).getDocuments()
-        
+        let snapshot = try await collectionRef(for: collection).getDocuments()
         return snapshot.documents.compactMap { document in
-            try? document.data(as: type)
+            return try? document.data(as: type)
         }
     }
     
     /// Query documents with where clause
     public func query<T: Decodable>(
-        collection: String,
+        collection: FirestoreCollection,
         field: String,
         isEqualTo value: Any,
         as type: T.Type
     ) async throws -> [T] {
-        let snapshot = try await db.collection(collection)
+        let snapshot = try await collectionRef(for: collection)
             .whereField(field, isEqualTo: value)
             .getDocuments()
         
@@ -103,13 +118,13 @@ public class FirestoreService {
     
     /// Query documents with ordering and limit
     public func queryOrdered<T: Decodable>(
-        collection: String,
+        collection: FirestoreCollection,
         orderBy field: String,
         descending: Bool = false,
         limit: Int? = nil,
         as type: T.Type
     ) async throws -> [T] {
-        var query: Query = db.collection(collection)
+        var query: Query = collectionRef(for: collection)
             .order(by: field, descending: descending)
         
         if let limit = limit {
@@ -127,53 +142,67 @@ public class FirestoreService {
     
     /// Listen to a document in real-time
     public func listen<T: Decodable>(
-        collection: String,
+        collection: FirestoreCollection,
         documentId: String,
-        as type: T.Type,
-        onUpdate: @escaping (Result<T, Error>) -> Void
-    ) -> ListenerRegistration {
-        return db.collection(collection)
-            .document(documentId)
-            .addSnapshotListener { snapshot, error in
-                if let error = error {
-                    onUpdate(.failure(error))
-                    return
+        as type: T.Type
+    ) -> AsyncThrowingStream<T, Error> {
+        AsyncThrowingStream { continuation in
+            let listener = collectionRef(for: collection)
+                .document(documentId)
+                .addSnapshotListener { snapshot, error in
+                    if let error {
+                        continuation.finish(throwing: error)
+                        return
+                    }
+                    
+                    guard let snapshot = snapshot, snapshot.exists else {
+                        continuation.finish(throwing: FirestoreError.documentNotFound)
+                        return
+                    }
+                    
+                    do {
+                        let data = try snapshot.data(as: type)
+                        continuation.yield(data)
+                    } catch {
+                        continuation.finish(throwing: FirestoreError.decodingFailed)
+                    }
                 }
-                
-                guard let snapshot = snapshot,
-                      let data = try? snapshot.data(as: type) else {
-                    onUpdate(.failure(FirestoreError.decodingFailed))
-                    return
-                }
-                
-                onUpdate(.success(data))
+            
+            continuation.onTermination = { @Sendable _ in
+                listener.remove()
             }
+        }
     }
     
     /// Listen to a collection in real-time
     public func listenToCollection<T: Decodable>(
-        collection: String,
-        as type: T.Type,
-        onUpdate: @escaping (Result<[T], Error>) -> Void
-    ) -> ListenerRegistration {
-        return db.collection(collection)
-            .addSnapshotListener { snapshot, error in
-                if let error = error {
-                    onUpdate(.failure(error))
-                    return
+        collection: FirestoreCollection,
+        as type: T.Type
+    ) -> AsyncThrowingStream<[T], Error> {
+        AsyncThrowingStream { continuation in
+            let listener = collectionRef(for: collection)
+                .addSnapshotListener { snapshot, error in
+                    if let error {
+                        continuation.finish(throwing: error)
+                        return
+                    }
+                    
+                    guard let snapshot = snapshot else {
+                        continuation.finish(throwing: FirestoreError.snapshotFailed)
+                        return
+                    }
+                    
+                    let documents: [T] = snapshot.documents.compactMap { document in
+                        try? document.data(as: type)
+                    }
+                    
+                    continuation.yield(documents)
                 }
-                
-                guard let snapshot = snapshot else {
-                    onUpdate(.failure(FirestoreError.snapshotFailed))
-                    return
-                }
-                
-                let documents = snapshot.documents.compactMap { document in
-                    try? document.data(as: type)
-                }
-                
-                onUpdate(.success(documents))
+            
+            continuation.onTermination = { @Sendable _ in
+                listener.remove()
             }
+        }
     }
     
     // MARK: - Batch Operations
@@ -188,7 +217,7 @@ public class FirestoreService {
 
 // MARK: - Firestore Errors
 
-public enum FirestoreError: LocalizedError {
+public enum FirestoreError: LocalizedError, Equatable {
     case documentNotFound
     case decodingFailed
     case encodingFailed
@@ -207,6 +236,22 @@ public enum FirestoreError: LocalizedError {
             return "Failed to get snapshot"
         case .unknown(let error):
             return error.localizedDescription
+        }
+    }
+}
+
+public extension FirestoreError {
+    static func == (lhs: FirestoreError, rhs: FirestoreError) -> Bool {
+        switch (lhs, rhs) {
+        case (.documentNotFound, .documentNotFound),
+            (.decodingFailed, .decodingFailed),
+            (.encodingFailed, .encodingFailed),
+            (.snapshotFailed, .snapshotFailed):
+            return true
+        case (.unknown, .unknown):
+            return false
+        default:
+            return false
         }
     }
 }

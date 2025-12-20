@@ -9,7 +9,7 @@ import SwiftUI
 import BaseModule
 
 struct ForgotPasswordView: View {
-    @Bindable var viewModel: AuthViewModel
+    @EnvironmentObject var viewModel: AuthViewModel
     @FocusState private var focusedField: Field?
     
     enum Field {

@@ -15,7 +15,7 @@ final public class UserManager: NSObject {
     public override init() {}
     
     // MARK: - Variables
-    public  var userId: Int? {
+    public  var userId: String? {
         get { return manager[#function] }
         set { manager[#function] = newValue }
     }

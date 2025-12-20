@@ -10,22 +10,31 @@ import BaseModule
 
 struct HomeView: View {
     @Environment(AppState.self) private var appState
-    @State var viewModel = HomeViewModel()
+    @StateObject var viewModel: HomeViewModel
     @State var coordinator = Coordinator()
     
+    init() {
+        _viewModel = .init(wrappedValue: .init())
+    }
     var body: some View {
         NavigationStack(path: $coordinator.navigationPath) {
             List {
                 NavigationLink {
-                    VStack{}
+                    LazyView {
+                        IntroductionView()
+                    }
                 } label: {
                     HomeItemView(title: "Intorduction",
                                  description: "Show every one who R U?")
                 }
-                HomeItemView(title: "Intorduction",
-                             description: "Show every one who R U?")
-                HomeItemView(title: "Intorduction",
-                             description: "Show every one who R U?")
+                NavigationLink {
+                    LazyView {
+                        CollapsableHeaderView()
+                    }
+                } label: {
+                    HomeItemView(title: "Collapsable header",
+                                 description: "A test for collapsable header")
+                }
             }
             .navigationTitle("Home")
             .navigationBarItems(trailing: Button("Logout") {
@@ -46,9 +55,4 @@ struct HomeView: View {
             }
         }
     }
-}
-
-#Preview {
-    HomeView()
-        .environment(AppState())
 }

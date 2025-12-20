@@ -10,7 +10,6 @@ import BaseModule
 import ServiceModule
 
 @MainActor
-@Observable
 final class HomeViewModel: BaseViewModel {
     // MARK: - Properties
     private let authService: FirebaseAuthService

@@ -10,7 +10,7 @@ import AuthenticationServices
 import BaseModule
 
 struct LoginView: View {
-    @Bindable var viewModel: AuthViewModel
+    @EnvironmentObject var viewModel: AuthViewModel
     @Environment(AppState.self) var appState
     @Environment(\.colorScheme) var colorScheme
     @FocusState private var focusedField: Field?

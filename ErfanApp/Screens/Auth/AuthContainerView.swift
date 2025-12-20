@@ -9,10 +9,15 @@ import SwiftUI
 import BaseModule
 
 struct AuthContainerView: View {
-    @State private var viewModel = AuthViewModel()
+    // MARK: - properties
+    @StateObject private var viewModel: AuthViewModel
     @Environment(AppState.self) var appState
     @Environment(ThemeManager.self) var themeManager
     
+    // MARK: - init
+    init() {
+        _viewModel = .init(wrappedValue: .init())
+    }
     var body: some View {
         ZStack {
             // Background
@@ -23,16 +28,17 @@ struct AuthContainerView: View {
             Group {
                 switch viewModel.authState {
                 case .login:
-                    LoginView(viewModel: viewModel)
+                    LoginView()
                         .transition(.asymmetric(insertion: .move(edge: .leading), removal: .move(edge: .trailing)))
                 case .signUp:
-                    SignUpView(viewModel: viewModel)
+                    SignUpView()
                         .transition(.asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading)))
                 case .forgotPassword:
-                    ForgotPasswordView(viewModel: viewModel)
+                    ForgotPasswordView()
                         .transition(.asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading)))
                 }
             }
+            .environmentObject(viewModel)
         }
         .onChange(of: viewModel.dataModel.user) { _, newValue in
             if newValue != nil {

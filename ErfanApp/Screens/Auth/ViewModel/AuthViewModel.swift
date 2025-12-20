@@ -21,12 +21,11 @@ enum AuthState {
 
 // MARK: - Auth View Model
 @MainActor
-@Observable
 final class AuthViewModel: BaseViewModel {
     
     // MARK: - Published Properties
-    var authState: AuthState = .login
-    var dataModel = AuthModel()
+    @Published var authState: AuthState = .login
+    @Published var dataModel = AuthModel()
     private let authService: FirebaseAuthService = .init()
     
     // MARK: - Actions
@@ -46,10 +45,12 @@ extension AuthViewModel {
             self.dataModel.signInLoading = false
             return
         }
+        @Injected var userManager: UserManager
         
         Task {
             do {
                 let user = try await authService.signIn(email: dataModel.email, password: dataModel.password)
+                userManager.userId = user.uid
                 self.dataModel.signInLoading = false
                 self.setupToast(toast: .init(type: .success, message: "Signed in successfully", duration: 1))
                 waitMainThread(after: 1.2) {
@@ -180,6 +181,7 @@ extension AuthViewModel {
             return
         }
         self.dataModel.registerLoading = true
+        @Injected var userManager: UserManager
         Task {
             do {
                 let user = try await authService.signUp(email: dataModel.email,
@@ -187,6 +189,7 @@ extension AuthViewModel {
                 try await authService.updateDisplayName(to: dataModel.fullName)
                 self.dataModel.registerLoading = false
                 self.dataModel.user = .init(name: user.displayName ?? "Unknown", email: user.email ?? "Not Provided")
+                userManager.userId = user.uid
                 setupToast(toast: .init(type: .success, message: "Welcome \(dataModel.fullName)"))
             } catch {
                 Logger.log(.function, level: .error, error.localizedDescription)
