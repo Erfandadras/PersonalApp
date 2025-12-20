@@ -14,8 +14,8 @@ xcuserdata/
 *.dSYM
 
 ## Firebase
-*.GoogleService-Info.plist
-*.google-service.plist
+## *.GoogleService-Info.plist
+## *.google-service.plist
 
 ## Playgrounds
 timeline.xctimeline
