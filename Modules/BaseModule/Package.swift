@@ -14,10 +14,15 @@ let package = Package(
             name: "BaseModule",
             targets: ["BaseModule"]),
     ],
+    dependencies: [
+        .package(url: "https://github.com/siteline/swiftui-introspect", from: "26.0.0"),
+    ],
     targets: [
         .target(
             name: "BaseModule",
-            dependencies: [],
+            dependencies: [
+                .product(name: "SwiftUIIntrospect", package: "swiftui-introspect"),
+            ],
             resources: [.process("Resources")]),
         .testTarget(
             name: "BaseModuleTests",

@@ -31,17 +31,18 @@ struct ErfanAppApp: App {
     var body: some Scene {
         WindowGroup {
             Group {
-                switch appState.flow {
-                case .splash:
-                    SplashView()
-                        .transition(.opacity)
-                case .home:
-                    HomeView()
-                        .transition(.opacity.combined(with: .scale))
-                case .login:
-                    AuthContainerView()
-                        .transition(.opacity.combined(with: .scale))
-                }
+                CollapsableHeaderView()
+//                switch appState.flow {
+//                case .splash:
+//                    SplashView()
+//                        .transition(.opacity)
+//                case .home:
+//                    HomeView()
+//                        .transition(.opacity.combined(with: .scale))
+//                case .login:
+//                    AuthContainerView()
+//                        .transition(.opacity.combined(with: .scale))
+//                }
             }
             .animation(.easeInOut(duration: 0.5), value: appState.flow)
             .id(localizationManager.currentLanguage) // by adding this line the mirror bug fixed
