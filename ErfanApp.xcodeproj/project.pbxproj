@@ -28,6 +28,7 @@
 		E4542A032EF19E650086D214 /* IntroductionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4542A022EF19E4F0086D214 /* IntroductionService.swift */; };
 		E4542A052EF19E720086D214 /* UserIntroduction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4542A042EF19E6B0086D214 /* UserIntroduction.swift */; };
 		E4542A0A2EF1B2D60086D214 /* ExperienceFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4542A092EF1B2D60086D214 /* ExperienceFormView.swift */; };
+		E47AAC252EFD968600C50144 /* CollapsableHeaderHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47AAC242EFD968600C50144 /* CollapsableHeaderHelper.swift */; };
 		E480DA812EF5543100258DE7 /* CollapsableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E480DA802EF5543100258DE7 /* CollapsableHeaderView.swift */; };
 		E4812C5A2EE6091600AF31E4 /* IntroductionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4812C592EE6091200AF31E4 /* IntroductionView.swift */; };
 		E4812C5C2EE6092100AF31E4 /* IntroductionVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4812C5B2EE6091A00AF31E4 /* IntroductionVM.swift */; };
@@ -47,7 +48,6 @@
 		E4DB3B162ED81BE5008ADB9A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E4DB3B152ED81BE5008ADB9A /* GoogleService-Info.plist */; };
 		E4DB3B1D2ED9D952008ADB9A /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DB3B1C2ED9D94D008ADB9A /* AppState.swift */; };
 		E4E895D22EF6E17100EE3CB8 /* SwiftUIIntrospect in Frameworks */ = {isa = PBXBuildFile; productRef = E4E895D12EF6E17100EE3CB8 /* SwiftUIIntrospect */; };
-		E4E895D72EF9508F00EE3CB8 /* CollapsableHeaderVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E895D62EF9508500EE3CB8 /* CollapsableHeaderVM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +83,7 @@
 		E4542A022EF19E4F0086D214 /* IntroductionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionService.swift; sourceTree = "<group>"; };
 		E4542A042EF19E6B0086D214 /* UserIntroduction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserIntroduction.swift; sourceTree = "<group>"; };
 		E4542A092EF1B2D60086D214 /* ExperienceFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceFormView.swift; sourceTree = "<group>"; };
+		E47AAC242EFD968600C50144 /* CollapsableHeaderHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsableHeaderHelper.swift; sourceTree = "<group>"; };
 		E480DA802EF5543100258DE7 /* CollapsableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsableHeaderView.swift; sourceTree = "<group>"; };
 		E4812C592EE6091200AF31E4 /* IntroductionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionView.swift; sourceTree = "<group>"; };
 		E4812C5B2EE6091A00AF31E4 /* IntroductionVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionVM.swift; sourceTree = "<group>"; };
@@ -105,7 +106,6 @@
 		E4DB3B102ED8155E008ADB9A /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		E4DB3B152ED81BE5008ADB9A /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E4DB3B1C2ED9D94D008ADB9A /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
-		E4E895D62EF9508500EE3CB8 /* CollapsableHeaderVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsableHeaderVM.swift; sourceTree = "<group>"; };
 		F50A6DF761F83B9EBEA9365B /* SignUpView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		F5AED9009BC05A1119394332 /* LoginView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -379,7 +379,7 @@
 		E4E895D32EF8495500EE3CB8 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
-				E4E895D62EF9508500EE3CB8 /* CollapsableHeaderVM.swift */,
+				E47AAC242EFD968600C50144 /* CollapsableHeaderHelper.swift */,
 				E480DA802EF5543100258DE7 /* CollapsableHeaderView.swift */,
 			);
 			path = CustomViews;
@@ -530,6 +530,7 @@
 				E41C37F42EDF32FF00A165DB /* HomeViewModel.swift in Sources */,
 				E4542A0A2EF1B2D60086D214 /* ExperienceFormView.swift in Sources */,
 				E48E6E222EC8CD2C004C6BE8 /* AppDelegate.swift in Sources */,
+				E47AAC252EFD968600C50144 /* CollapsableHeaderHelper.swift in Sources */,
 				E4542A052EF19E720086D214 /* UserIntroduction.swift in Sources */,
 				E48E6E082EC5B0F3004C6BE8 /* HomeView.swift in Sources */,
 				E4542A032EF19E650086D214 /* IntroductionService.swift in Sources */,
@@ -553,7 +554,6 @@
 				A8B0D9CFDEB338B340C3BC68 /* ForgotPasswordView.swift in Sources */,
 				243F82120872BB58E7212D39 /* ForgotPasswordView.swift in Sources */,
 				E4542A012EF19CBF0086D214 /* ExperienceFormState.swift in Sources */,
-				E4E895D72EF9508F00EE3CB8 /* CollapsableHeaderVM.swift in Sources */,
 				E4812C5A2EE6091600AF31E4 /* IntroductionView.swift in Sources */,
 				E41C37FF2EE01B5E00A165DB /* UserRM.swift in Sources */,
 				AB47E87A5F3F3E6C257A7280 /* AuthContainerView.swift in Sources */,

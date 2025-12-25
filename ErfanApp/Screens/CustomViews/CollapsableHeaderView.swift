@@ -329,9 +329,3 @@ struct ModernContentCard: View {
         .padding(.horizontal)
     }
 }
-
-
-
-#Preview {
-    CollapsableHeaderView()
-}
