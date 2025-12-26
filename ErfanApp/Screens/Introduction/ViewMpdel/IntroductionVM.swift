@@ -2,7 +2,7 @@ import Foundation
 import Combine
 import BaseModule
 import ServiceModule
-
+import UIKit
 
 final class IntroductionVM: BaseViewModel {
     // MARK: - properties
@@ -15,8 +15,7 @@ final class IntroductionVM: BaseViewModel {
     // data
     @Published private(set) var experiences: [ExperienceItem] = []
     @Published private(set) var introduction: UserIntroduction?
-    
-    
+            
     // services
     private let experienceService: ExperienceServicing
     private let introductionService: IntroductionServiceProtocol
@@ -34,7 +33,6 @@ final class IntroductionVM: BaseViewModel {
         super.init()
         observeExperiences()
         observeIntroduction()
-        Logger.log(.function, level: .info, "initialized")
     }
     
     @MainActor
@@ -59,7 +57,7 @@ extension IntroductionVM {
         introductionState.loading = true
         guard let userId = userManager.userId else {
             Logger.log(.function, level: .error, "failed to get user id")
-            toast = .init(type: .error, message: "Faild to get User Id")
+            toast = .init(type: .error, message: "Failed to get User Id")
             self.introductionState.error = CustomError(description: "Failed to get user Id")
             return }
         introductionTask = Task(name: "observe introduction") { [introductionService] in
@@ -76,6 +74,10 @@ extension IntroductionVM {
                            error.localizedDescription)
                 await MainActor.run {
                     self.introductionState.loading = false
+                    if let firestoreError = error as? FirestoreError, firestoreError == .documentNotFound {
+                        // Silent fail for new users
+                        return
+                    }
                     self.toast = .init(type: .error, message: "Failed to Observe Introduction")
                 }
             }

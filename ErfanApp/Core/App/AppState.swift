@@ -15,7 +15,7 @@ enum AppFlow {
 
 @Observable
 final class AppState {
-    private(set) var flow: AppFlow = .splash
+    private(set) var flow: AppFlow = .home
     
     func setFlow(_ flow: AppFlow) {
         self.flow = flow

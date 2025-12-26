@@ -5,7 +5,6 @@
 //  Created by Erfan mac mini on 11/24/25.
 //
 
-import UIKit
 import AuthenticationServices
 import Combine
 import BaseModule
@@ -186,7 +185,7 @@ extension AuthViewModel {
             do {
                 let user = try await authService.signUp(email: dataModel.email,
                                                         password: dataModel.password)
-                try await authService.updateDisplayName(to: dataModel.fullName)
+                try? await authService.updateDisplayName(to: dataModel.fullName)
                 self.dataModel.registerLoading = false
                 self.dataModel.user = .init(name: user.displayName ?? "Unknown", email: user.email ?? "Not Provided")
                 userManager.userId = user.uid

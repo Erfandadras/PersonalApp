@@ -5,7 +5,7 @@ import BaseModule
 
 public enum FirestoreCollection: String, CaseIterable, Sendable {
     case experiences = "Experiences"
-    case users = "User"
+    case users = "Users"
     
     var path: String { rawValue }
 }
@@ -64,6 +64,18 @@ public final class FirestoreService {
         } catch {
             throw FirestoreError.decodingFailed
         }
+    }
+    
+    
+    /// Read a document
+    public func checkExistence(
+        collection: FirestoreCollection,
+        documentId: String,
+    ) async throws -> Bool {
+        let document = try await collectionRef(for: collection)
+            .document(documentId)
+            .getDocument()
+        return document.exists
     }
     
     /// Update specific fields in a document

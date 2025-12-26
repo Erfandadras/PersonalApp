@@ -13,6 +13,7 @@ struct IntroductionView: View {
     // MARK: - Properties
     @StateObject private var viewModel: IntroductionVM
     @State private var showDetail: Bool = false
+    @State private var openMenu: Bool = false
     @Environment(\.openURL) private var openURL
     
     // Animation states
@@ -24,6 +25,7 @@ struct IntroductionView: View {
     @State private var showSocialButtons: Bool = false
     @State private var personImageScale: CGFloat = 0.8
     @State private var personImageOpacity: Double = 0
+    @State private var avatarImage: UIImage?
     
     private var introduction: UserIntroduction? {
         viewModel.introduction
@@ -47,12 +49,25 @@ struct IntroductionView: View {
                 .opacity(0.8)
             
             ZStack(alignment: .bottom) {
-                // Person image with animation
-                Image(.person)
-                    .resizable()
-                    .padding(.top, 90)
-                    .scaleEffect(personImageScale)
-                    .opacity(personImageOpacity)
+                // Person image with animation and loading state
+                ZStack {
+                    if let avatarImage {
+                        Image(uiImage: avatarImage)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .padding(.top, 90)
+                            .scaleEffect(personImageScale)
+                            .opacity(personImageOpacity)
+                    } else if (isLoading || avatarImage == nil) && introduction != nil {
+                        // Image skeleton
+                        Rectangle()
+                            .fill(.white.opacity(0.05))
+                            .shimmer()
+                            .padding(.top, 90)
+                            .scaleEffect(personImageScale)
+                            .opacity(personImageOpacity)
+                    }
+                }
                 
                 // Gradients
                 topGradient()
@@ -67,11 +82,58 @@ struct IntroductionView: View {
             }
         }
         .background(.black)
-        .preferredColorScheme(.dark)
         .ignoresSafeArea()
+        .sheet(isPresented: $openMenu, content: {
+            CreateUserIntroductionView(introduction)
+        })
         .onChange(of: viewModel.introductionState.loading) { _, newValue in
             if !newValue && introduction != nil {
                 startAnimations()
+            }
+        }
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                Button {
+                    if introduction != nil {
+                        withAnimation(.spring(response: 0.5, dampingFraction: 0.7)) {
+                            openMenu.toggle()
+                        }
+                    }
+                } label: {
+                    LottieSwitch(animation: .named("menuAnimation"))
+                        .isOn($openMenu)
+                        .onAnimation(fromProgress: 0, toProgress: 1)
+                        .offAnimation(fromProgress: 1, toProgress: 0)
+                        .configure { animation in
+                            animation.animationSpeed = 2.5
+                        }
+                        .frame(width: 32, height: 32)
+                }
+                .opacity(showMenuButton ? 1 : 0)
+                .offset(x: showMenuButton ? 0 : 50)
+            }
+        }
+        .preferredColorScheme(.dark)
+        .task(id: introduction?.avatar) {
+            await loadAvatar()
+        }
+    }
+    
+    // MARK: - Avatar Loading
+    private func loadAvatar() async {
+        guard let url = introduction?.getAvatarURL() else {
+            avatarImage = nil
+            return
+        }
+        
+        // Load in background thread
+        let image = await Task.detached {
+            UIImage(contentsOfFile: url.path)
+        }.value
+        
+        await MainActor.run {
+            withAnimation(.easeIn(duration: 0.5)) {
+                self.avatarImage = image
             }
         }
     }
@@ -81,38 +143,6 @@ struct IntroductionView: View {
     private func contentView() -> some View {
         VStack(spacing: 80) {
             // Header
-            HStack {
-                if let initial = introduction?.firstName.first {
-                    Text("\(String(initial)),")
-                        .font(.Naskhi(size: 40))
-                        .foregroundStyle(.white)
-                        .opacity(showInitial ? 1 : 0)
-                        .offset(x: showInitial ? 0 : -50)
-                }
-                Spacer()
-                
-                Button {
-                    if introduction != nil {
-                        withAnimation(.spring(response: 0.5, dampingFraction: 0.7)) {
-                            showDetail.toggle()
-                        }
-                    }
-                } label: {
-                    LottieSwitch(animation: .named("menuAnimation"))
-                        .isOn($showDetail)
-                        .onAnimation(fromProgress: 0, toProgress: 1)
-                        .offAnimation(fromProgress: 1, toProgress: 0)
-                        .configure { animation in
-                            animation.animationSpeed = 2.5
-                        }
-                }
-                .frame(width: 48, height: 48, alignment: .center)
-                .opacity(showMenuButton ? 1 : 0)
-                .offset(x: showMenuButton ? 0 : 50)
-            }
-            .padding(.top, 50)
-            .padding(.horizontal, 24)
-            
             Spacer()
             
             // Name and title section
@@ -355,7 +385,3 @@ struct ShimmerModifier: ViewModifier {
             }
     }
 }
-
-//#Preview {
-//    IntroductionView()
-//}

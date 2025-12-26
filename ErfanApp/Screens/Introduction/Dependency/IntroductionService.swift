@@ -18,7 +18,7 @@ protocol IntroductionServiceProtocol {
 // MARK: - Introduction service
 final class IntroductionService: NSObject {
     // MARK: - properties
-    private let service: FirestoreService
+    internal let service: FirestoreService
     
     // MARK: - init
     init(service: FirestoreService = FirestoreService()) {
@@ -48,6 +48,5 @@ extension IntroductionService: IntroductionServiceProtocol {
                        documentId: userId,
                        as: UserIntroduction.self)
     }
-    
 }
 

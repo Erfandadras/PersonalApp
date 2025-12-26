@@ -29,6 +29,9 @@
 		E4542A052EF19E720086D214 /* UserIntroduction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4542A042EF19E6B0086D214 /* UserIntroduction.swift */; };
 		E4542A0A2EF1B2D60086D214 /* ExperienceFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4542A092EF1B2D60086D214 /* ExperienceFormView.swift */; };
 		E47AAC252EFD968600C50144 /* CollapsableHeaderHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47AAC242EFD968600C50144 /* CollapsableHeaderHelper.swift */; };
+		E47AAC2E2EFDAD0300C50144 /* UserIntroductionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47AAC2C2EFDAD0300C50144 /* UserIntroductionService.swift */; };
+		E47AAC302EFEB1E300C50144 /* CreateUserIntroductionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47AAC2F2EFEB1D300C50144 /* CreateUserIntroductionView.swift */; };
+		E47AAC332EFEC2B800C50144 /* UpdateIntroductionVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47AAC322EFEC2AD00C50144 /* UpdateIntroductionVM.swift */; };
 		E480DA812EF5543100258DE7 /* CollapsableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E480DA802EF5543100258DE7 /* CollapsableHeaderView.swift */; };
 		E4812C5A2EE6091600AF31E4 /* IntroductionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4812C592EE6091200AF31E4 /* IntroductionView.swift */; };
 		E4812C5C2EE6092100AF31E4 /* IntroductionVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4812C5B2EE6091A00AF31E4 /* IntroductionVM.swift */; };
@@ -84,6 +87,9 @@
 		E4542A042EF19E6B0086D214 /* UserIntroduction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserIntroduction.swift; sourceTree = "<group>"; };
 		E4542A092EF1B2D60086D214 /* ExperienceFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceFormView.swift; sourceTree = "<group>"; };
 		E47AAC242EFD968600C50144 /* CollapsableHeaderHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsableHeaderHelper.swift; sourceTree = "<group>"; };
+		E47AAC2C2EFDAD0300C50144 /* UserIntroductionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserIntroductionService.swift; sourceTree = "<group>"; };
+		E47AAC2F2EFEB1D300C50144 /* CreateUserIntroductionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserIntroductionView.swift; sourceTree = "<group>"; };
+		E47AAC322EFEC2AD00C50144 /* UpdateIntroductionVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateIntroductionVM.swift; sourceTree = "<group>"; };
 		E480DA802EF5543100258DE7 /* CollapsableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsableHeaderView.swift; sourceTree = "<group>"; };
 		E4812C592EE6091200AF31E4 /* IntroductionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionView.swift; sourceTree = "<group>"; };
 		E4812C5B2EE6091A00AF31E4 /* IntroductionVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionVM.swift; sourceTree = "<group>"; };
@@ -172,6 +178,7 @@
 		E41C37F02EDF32DD00A165DB /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				E47AAC2D2EFDAD0300C50144 /* Dependencies */,
 				E41C37F22EDF32EE00A165DB /* View */,
 				E41C37F12EDF32E500A165DB /* ViewModel */,
 			);
@@ -212,6 +219,14 @@
 			path = Component;
 			sourceTree = "<group>";
 		};
+		E47AAC2D2EFDAD0300C50144 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				E47AAC2C2EFDAD0300C50144 /* UserIntroductionService.swift */,
+			);
+			path = Dependencies;
+			sourceTree = "<group>";
+		};
 		E4812C582EE6090000AF31E4 /* Introduction */ = {
 			isa = PBXGroup;
 			children = (
@@ -226,6 +241,7 @@
 		E4812C5D2EE6092400AF31E4 /* ViewMpdel */ = {
 			isa = PBXGroup;
 			children = (
+				E47AAC322EFEC2AD00C50144 /* UpdateIntroductionVM.swift */,
 				E4812C5B2EE6091A00AF31E4 /* IntroductionVM.swift */,
 			);
 			path = ViewMpdel;
@@ -234,6 +250,7 @@
 		E4812C5E2EE6092D00AF31E4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E47AAC2F2EFEB1D300C50144 /* CreateUserIntroductionView.swift */,
 				E4542A092EF1B2D60086D214 /* ExperienceFormView.swift */,
 				E4812C592EE6091200AF31E4 /* IntroductionView.swift */,
 			);
@@ -529,6 +546,7 @@
 			files = (
 				E41C37F42EDF32FF00A165DB /* HomeViewModel.swift in Sources */,
 				E4542A0A2EF1B2D60086D214 /* ExperienceFormView.swift in Sources */,
+				E47AAC302EFEB1E300C50144 /* CreateUserIntroductionView.swift in Sources */,
 				E48E6E222EC8CD2C004C6BE8 /* AppDelegate.swift in Sources */,
 				E47AAC252EFD968600C50144 /* CollapsableHeaderHelper.swift in Sources */,
 				E4542A052EF19E720086D214 /* UserIntroduction.swift in Sources */,
@@ -548,6 +566,7 @@
 				E41C37F62EDF437500A165DB /* HomeItemView.swift in Sources */,
 				E480DA812EF5543100258DE7 /* CollapsableHeaderView.swift in Sources */,
 				E4DB3B122ED8155E008ADB9A /* SplashViewModel.swift in Sources */,
+				E47AAC2E2EFDAD0300C50144 /* UserIntroductionService.swift in Sources */,
 				E4DB3B132ED8155E008ADB9A /* SplashView.swift in Sources */,
 				E490FEE02EE61911007EE059 /* ExperienceService.swift in Sources */,
 				CB05613A96555028029497B8 /* SignUpView.swift in Sources */,
@@ -558,6 +577,7 @@
 				E41C37FF2EE01B5E00A165DB /* UserRM.swift in Sources */,
 				AB47E87A5F3F3E6C257A7280 /* AuthContainerView.swift in Sources */,
 				125146DEAEFC1B8B680A9C1E /* AuthContainerView.swift in Sources */,
+				E47AAC332EFEC2B800C50144 /* UpdateIntroductionVM.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
