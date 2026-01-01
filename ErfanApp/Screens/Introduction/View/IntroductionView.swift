@@ -52,6 +52,7 @@ struct IntroductionView: View {
                 // Person image with animation and loading state
                 ZStack {
                     if let avatarImage {
+                        
                         Image(uiImage: avatarImage)
                             .resizable()
                             .aspectRatio(contentMode: .fit)

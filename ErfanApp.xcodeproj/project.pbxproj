@@ -17,6 +17,15 @@
 		A8B0D9CFDEB338B340C3BC68 /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB91B4560588658ABBD231C /* ForgotPasswordView.swift */; };
 		AB47E87A5F3F3E6C257A7280 /* AuthContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A5778909DABA8352CC002B /* AuthContainerView.swift */; };
 		CB05613A96555028029497B8 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50A6DF761F83B9EBEA9365B /* SignUpView.swift */; };
+		E41AF0162F03FE8600E67F53 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E41AF0152F03FE8600E67F53 /* WidgetKit.framework */; };
+		E41AF0182F03FE8600E67F53 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E41AF0172F03FE8600E67F53 /* SwiftUI.framework */; };
+		E41AF0252F03FE8700E67F53 /* MyLiveActivityExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = E41AF0142F03FE8600E67F53 /* MyLiveActivityExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E41AF02D2F03FF0500E67F53 /* LiveActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41AF02C2F03FF0500E67F53 /* LiveActivityView.swift */; };
+		E41AF0322F04019A00E67F53 /* LiveActivityModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41AF0312F04019A00E67F53 /* LiveActivityModels.swift */; };
+		E41AF0332F0402BD00E67F53 /* LiveActivityModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41AF0312F04019A00E67F53 /* LiveActivityModels.swift */; };
+		E41AF0352F0420D800E67F53 /* LiveActivityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41AF0342F0420D800E67F53 /* LiveActivityViewModel.swift */; };
+		E41AF0452F0551F400E67F53 /* FootballMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41AF0442F0551F400E67F53 /* FootballMatch.swift */; };
+		E41AF0462F0551F400E67F53 /* FootballMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41AF0442F0551F400E67F53 /* FootballMatch.swift */; };
 		E41C37F42EDF32FF00A165DB /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41C37F32EDF32F800A165DB /* HomeViewModel.swift */; };
 		E41C37F62EDF437500A165DB /* HomeItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41C37F52EDF436F00A165DB /* HomeItemView.swift */; };
 		E41C37FD2EE019F200A165DB /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41C37FC2EE019E600A165DB /* AuthModel.swift */; };
@@ -54,6 +63,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		E41AF0232F03FE8700E67F53 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E48E6DD12EC5B0D3004C6BE8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E41AF0132F03FE8600E67F53;
+			remoteInfo = MyLiveActivityExtension;
+		};
 		E48E6DE72EC5B0D5004C6BE8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E48E6DD12EC5B0D3004C6BE8 /* Project object */;
@@ -70,10 +86,31 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		E41AF02A2F03FE8700E67F53 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				E41AF0252F03FE8700E67F53 /* MyLiveActivityExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		0C0FA2EFF3FED2DD516F1BC2 /* AuthViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		3DB91B4560588658ABBD231C /* ForgotPasswordView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 		D6A5778909DABA8352CC002B /* AuthContainerView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AuthContainerView.swift; sourceTree = "<group>"; };
+		E41AF0142F03FE8600E67F53 /* MyLiveActivityExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MyLiveActivityExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		E41AF0152F03FE8600E67F53 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		E41AF0172F03FE8600E67F53 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		E41AF02C2F03FF0500E67F53 /* LiveActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveActivityView.swift; sourceTree = "<group>"; };
+		E41AF0312F04019A00E67F53 /* LiveActivityModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveActivityModels.swift; sourceTree = "<group>"; };
+		E41AF0342F0420D800E67F53 /* LiveActivityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveActivityViewModel.swift; sourceTree = "<group>"; };
+		E41AF0442F0551F400E67F53 /* FootballMatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootballMatch.swift; sourceTree = "<group>"; };
 		E41C37F32EDF32F800A165DB /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		E41C37F52EDF436F00A165DB /* HomeItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeItemView.swift; sourceTree = "<group>"; };
 		E41C37FC2EE019E600A165DB /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
@@ -116,7 +153,37 @@
 		F5AED9009BC05A1119394332 /* LoginView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		E41AF0262F03FE8700E67F53 /* Exceptions for "MyLiveActivity" folder in "MyLiveActivityExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = E41AF0132F03FE8600E67F53 /* MyLiveActivityExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		E41AF0192F03FE8600E67F53 /* MyLiveActivity */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				E41AF0262F03FE8700E67F53 /* Exceptions for "MyLiveActivity" folder in "MyLiveActivityExtension" target */,
+			);
+			path = MyLiveActivity;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
+		E41AF0112F03FE8600E67F53 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E41AF0182F03FE8600E67F53 /* SwiftUI.framework in Frameworks */,
+				E41AF0162F03FE8600E67F53 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E48E6DD62EC5B0D3004C6BE8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -173,6 +240,33 @@
 				0C0FA2EFF3FED2DD516F1BC2 /* AuthViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E41AF00F2F03FCF000E67F53 /* CollapsableHeader */ = {
+			isa = PBXGroup;
+			children = (
+				E47AAC242EFD968600C50144 /* CollapsableHeaderHelper.swift */,
+				E480DA802EF5543100258DE7 /* CollapsableHeaderView.swift */,
+			);
+			path = CollapsableHeader;
+			sourceTree = "<group>";
+		};
+		E41AF02B2F03FEB200E67F53 /* LiveActivity */ = {
+			isa = PBXGroup;
+			children = (
+				E41AF0342F0420D800E67F53 /* LiveActivityViewModel.swift */,
+				E41AF02C2F03FF0500E67F53 /* LiveActivityView.swift */,
+			);
+			path = LiveActivity;
+			sourceTree = "<group>";
+		};
+		E41AF0302F04018A00E67F53 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E41AF0442F0551F400E67F53 /* FootballMatch.swift */,
+				E41AF0312F04019A00E67F53 /* LiveActivityModels.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		E41C37F02EDF32DD00A165DB /* Home */ = {
@@ -263,6 +357,7 @@
 				E48E6E062EC5B0F3004C6BE8 /* ErfanApp */,
 				E48E6E0B2EC5B0F8004C6BE8 /* ErfanAppTests */,
 				E48E6E0F2EC5B0FB004C6BE8 /* ErfanAppUITests */,
+				E41AF0192F03FE8600E67F53 /* MyLiveActivity */,
 				E48E6E122EC61E45004C6BE8 /* Frameworks */,
 				E48E6DDA2EC5B0D3004C6BE8 /* Products */,
 			);
@@ -274,6 +369,7 @@
 				E48E6DD92EC5B0D3004C6BE8 /* ErfanApp.app */,
 				E48E6DE62EC5B0D5004C6BE8 /* ErfanAppTests.xctest */,
 				E48E6DF02EC5B0D5004C6BE8 /* ErfanAppUITests.xctest */,
+				E41AF0142F03FE8600E67F53 /* MyLiveActivityExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -310,6 +406,8 @@
 			isa = PBXGroup;
 			children = (
 				E48E6E1A2EC62313004C6BE8 /* Modules */,
+				E41AF0152F03FE8600E67F53 /* WidgetKit.framework */,
+				E41AF0172F03FE8600E67F53 /* SwiftUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -396,8 +494,9 @@
 		E4E895D32EF8495500EE3CB8 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
-				E47AAC242EFD968600C50144 /* CollapsableHeaderHelper.swift */,
-				E480DA802EF5543100258DE7 /* CollapsableHeaderView.swift */,
+				E41AF0302F04018A00E67F53 /* Models */,
+				E41AF00F2F03FCF000E67F53 /* CollapsableHeader */,
+				E41AF02B2F03FEB200E67F53 /* LiveActivity */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -405,6 +504,28 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		E41AF0132F03FE8600E67F53 /* MyLiveActivityExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E41AF0272F03FE8700E67F53 /* Build configuration list for PBXNativeTarget "MyLiveActivityExtension" */;
+			buildPhases = (
+				E41AF0102F03FE8600E67F53 /* Sources */,
+				E41AF0112F03FE8600E67F53 /* Frameworks */,
+				E41AF0122F03FE8600E67F53 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				E41AF0192F03FE8600E67F53 /* MyLiveActivity */,
+			);
+			name = MyLiveActivityExtension;
+			packageProductDependencies = (
+			);
+			productName = MyLiveActivityExtension;
+			productReference = E41AF0142F03FE8600E67F53 /* MyLiveActivityExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		E48E6DD82EC5B0D3004C6BE8 /* ErfanApp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E48E6DFA2EC5B0D5004C6BE8 /* Build configuration list for PBXNativeTarget "ErfanApp" */;
@@ -412,10 +533,12 @@
 				E48E6DD52EC5B0D3004C6BE8 /* Sources */,
 				E48E6DD62EC5B0D3004C6BE8 /* Frameworks */,
 				E48E6DD72EC5B0D3004C6BE8 /* Resources */,
+				E41AF02A2F03FE8700E67F53 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				E41AF0242F03FE8700E67F53 /* PBXTargetDependency */,
 			);
 			name = ErfanApp;
 			packageProductDependencies = (
@@ -474,6 +597,9 @@
 				LastSwiftUpdateCheck = 2600;
 				LastUpgradeCheck = 2600;
 				TargetAttributes = {
+					E41AF0132F03FE8600E67F53 = {
+						CreatedOnToolsVersion = 26.0.1;
+					};
 					E48E6DD82EC5B0D3004C6BE8 = {
 						CreatedOnToolsVersion = 26.0.1;
 					};
@@ -508,11 +634,19 @@
 				E48E6DD82EC5B0D3004C6BE8 /* ErfanApp */,
 				E48E6DE52EC5B0D5004C6BE8 /* ErfanAppTests */,
 				E48E6DEF2EC5B0D5004C6BE8 /* ErfanAppUITests */,
+				E41AF0132F03FE8600E67F53 /* MyLiveActivityExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		E41AF0122F03FE8600E67F53 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E48E6DD72EC5B0D3004C6BE8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -540,6 +674,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		E41AF0102F03FE8600E67F53 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E41AF0462F0551F400E67F53 /* FootballMatch.swift in Sources */,
+				E41AF0332F0402BD00E67F53 /* LiveActivityModels.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E48E6DD52EC5B0D3004C6BE8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -560,6 +703,7 @@
 				923185F03AD5ADDEA7DD9447 /* AuthViewModel.swift in Sources */,
 				736C6181A9FC5BC089E39866 /* AuthViewModel.swift in Sources */,
 				67848498FDE4E7DAD9AAFDA8 /* LoginView.swift in Sources */,
+				E41AF0322F04019A00E67F53 /* LiveActivityModels.swift in Sources */,
 				E41C38022EE0206200A165DB /* AuthTextField.swift in Sources */,
 				11296265CAB8004CF7D5B5AD /* LoginView.swift in Sources */,
 				14A21A1481A7311FE6C606CA /* SignUpView.swift in Sources */,
@@ -571,12 +715,15 @@
 				E490FEE02EE61911007EE059 /* ExperienceService.swift in Sources */,
 				CB05613A96555028029497B8 /* SignUpView.swift in Sources */,
 				A8B0D9CFDEB338B340C3BC68 /* ForgotPasswordView.swift in Sources */,
+				E41AF0452F0551F400E67F53 /* FootballMatch.swift in Sources */,
+				E41AF02D2F03FF0500E67F53 /* LiveActivityView.swift in Sources */,
 				243F82120872BB58E7212D39 /* ForgotPasswordView.swift in Sources */,
 				E4542A012EF19CBF0086D214 /* ExperienceFormState.swift in Sources */,
 				E4812C5A2EE6091600AF31E4 /* IntroductionView.swift in Sources */,
 				E41C37FF2EE01B5E00A165DB /* UserRM.swift in Sources */,
 				AB47E87A5F3F3E6C257A7280 /* AuthContainerView.swift in Sources */,
 				125146DEAEFC1B8B680A9C1E /* AuthContainerView.swift in Sources */,
+				E41AF0352F0420D800E67F53 /* LiveActivityViewModel.swift in Sources */,
 				E47AAC332EFEC2B800C50144 /* UpdateIntroductionVM.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -601,6 +748,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		E41AF0242F03FE8700E67F53 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E41AF0132F03FE8600E67F53 /* MyLiveActivityExtension */;
+			targetProxy = E41AF0232F03FE8700E67F53 /* PBXContainerItemProxy */;
+		};
 		E48E6DE82EC5B0D5004C6BE8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = E48E6DD82EC5B0D3004C6BE8 /* ErfanApp */;
@@ -614,6 +766,66 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		E41AF0282F03FE8700E67F53 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AF5VQ8R5DZ;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MyLiveActivity/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MyLiveActivity;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ios.erfan-dadras.com.ErfanApp.MyLiveActivity";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E41AF0292F03FE8700E67F53 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AF5VQ8R5DZ;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MyLiveActivity/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MyLiveActivity;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ios.erfan-dadras.com.ErfanApp.MyLiveActivity";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		E48E6DF82EC5B0D5004C6BE8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -892,6 +1104,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		E41AF0272F03FE8700E67F53 /* Build configuration list for PBXNativeTarget "MyLiveActivityExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E41AF0282F03FE8700E67F53 /* Debug */,
+				E41AF0292F03FE8700E67F53 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		E48E6DD42EC5B0D3004C6BE8 /* Build configuration list for PBXProject "ErfanApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

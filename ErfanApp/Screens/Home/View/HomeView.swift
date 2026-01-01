@@ -43,6 +43,15 @@ struct HomeView: View {
                         HomeItemView(title: "Collapsable header",
                                      description: "A test for collapsable header")
                     }
+                    
+                    NavigationLink {
+                        LazyView {
+                            LiveActivityView()
+                        }
+                    } label: {
+                        HomeItemView(title: "Live Activity",
+                                     description: "Widget Extension")
+                    }
                 } header: {
                     Text("Custom Views")
                         .foregroundStyle(.ui.black)
